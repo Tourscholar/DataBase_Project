@@ -214,13 +214,13 @@ public class AttendanceStudentFrm extends JInternalFrame {
         attendance.setCourse_id(course.getId());
         AttendanceDao attendanceDao = new AttendanceDao();
         if(attendanceDao.isAttendanced(attendance)){
-            JOptionPane.showMessageDialog(this, "已经签到，请勿重复签到！");
+            JOptionPane.showMessageDialog(this, "이미 출석체크를 했으니 중복체크를 하지 마세요!");
             return;
         }
         if(attendanceDao.addAttendance(attendance)){
-            JOptionPane.showMessageDialog(this, "签到成功！");
+            JOptionPane.showMessageDialog(this, "출석체크 성공!");
         }else{
-            JOptionPane.showMessageDialog(this, "签到失败！");
+            JOptionPane.showMessageDialog(this, "출석체크 실패!");
         }
         attendanceDao.closeDao();
         initTable();

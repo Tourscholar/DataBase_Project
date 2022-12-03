@@ -120,7 +120,7 @@ public class TeacherDao extends BaseDao {
             prst.setString(2, teacher.getPassword());
             ResultSet executeQuery = prst.executeQuery();
             if(!executeQuery.next()){
-                String retString = "旧密码错误！";
+                String retString = "오래된 비밀번호가 틀렸습니다!";
                 return retString;
             }
             id = executeQuery.getInt("id");
@@ -128,7 +128,7 @@ public class TeacherDao extends BaseDao {
             // TODO Auto-generated catch block
             e1.printStackTrace();
         }//把sql语句传给数据库操作对象
-        String retString = "修改失败";
+        String retString = "수정 실패";
         String sqlString = "update s_teacher set password = ? where id = ?";
         try {
             prst = con.prepareStatement(sqlString);
@@ -136,7 +136,7 @@ public class TeacherDao extends BaseDao {
             prst.setInt(2, id);
             int rst = prst.executeUpdate();
             if(rst > 0){
-                retString = "密码修改成功！";
+                retString = "비밀번호 수정 성공했습니다!";
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block

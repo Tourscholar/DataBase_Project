@@ -207,21 +207,21 @@ public class ManageClassFrm extends JInternalFrame {
     }
     protected void deleteClassAct(ActionEvent ae) {
         // TODO Auto-generated method stub
-        if(JOptionPane.showConfirmDialog(this, "您确定删除么？") != JOptionPane.OK_OPTION){
+        if(JOptionPane.showConfirmDialog(this, "삭제하시겠습니까?") != JOptionPane.OK_OPTION){
             return;
         }
         int index = classListTable.getSelectedRow();
         if(index == -1){
-            JOptionPane.showMessageDialog(this, "请选中要删除的数据!");
+            JOptionPane.showMessageDialog(this, "삭제할 데이터를 선택하십시오!");
             return;
         }
         DefaultTableModel dft = (DefaultTableModel) classListTable.getModel();
         int id = Integer.parseInt(dft.getValueAt(classListTable.getSelectedRow(), 0).toString());
         ClassDao classDao = new ClassDao();
         if(classDao.delete(id)){
-            JOptionPane.showMessageDialog(this, "删除成功!");
+            JOptionPane.showMessageDialog(this, "삭제 성공!");
         }else{
-            JOptionPane.showMessageDialog(this, "删除失败!");
+            JOptionPane.showMessageDialog(this, "삭제 실패!");
         }
         classDao.closeDao();
         setTable(new StudentClass());
@@ -232,7 +232,7 @@ public class ManageClassFrm extends JInternalFrame {
         ClassDao classDao = new ClassDao();
         int index = classListTable.getSelectedRow();
         if(index == -1){
-            JOptionPane.showMessageDialog(this, "请选中要修改的数据!");
+            JOptionPane.showMessageDialog(this, "수정할 데이터를 선택하십시오!");
             return;
         }
         DefaultTableModel dft = (DefaultTableModel) classListTable.getModel();
@@ -241,11 +241,11 @@ public class ManageClassFrm extends JInternalFrame {
         String editClassName = editClassNameTextField.getText().toString();
         String editClassInfo = editClassInfoTextArea.getText().toString();
         if(StringUtil.isEmpty(editClassName)){
-            JOptionPane.showMessageDialog(this, "请填写要修改的名称!");
+            JOptionPane.showMessageDialog(this, "수정할 이름을 적어주세요!");
             return;
         }
         if(className.equals(editClassName) && classInfo.equals(editClassInfo)){
-            JOptionPane.showMessageDialog(this, "您还没有做任何修改!");
+            JOptionPane.showMessageDialog(this, "아직 아무것도 수정하지 않으셨습니다!");
             return;
         }
         int id = Integer.parseInt(dft.getValueAt(classListTable.getSelectedRow(), 0).toString());
@@ -254,9 +254,9 @@ public class ManageClassFrm extends JInternalFrame {
         sc.setName(editClassName);
         sc.setInfo(editClassInfo);
         if(classDao.update(sc)){
-            JOptionPane.showMessageDialog(this, "更新成功!");
+            JOptionPane.showMessageDialog(this, "업데이트 성공!");
         }else{
-            JOptionPane.showMessageDialog(this, "更新失败!");
+            JOptionPane.showMessageDialog(this, "업데이트 실패!");
         }
         classDao.closeDao();
         setTable(new StudentClass());

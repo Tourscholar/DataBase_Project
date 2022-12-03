@@ -313,7 +313,7 @@ public class StatsScoreFrm extends JInternalFrame {
         courseList = courseDao.getCourseList(new Course());
         courseDao.closeDao();
         for (Course course : courseList) {
-            if("教师".equals(MainFrm.userType.getName())){
+            if("선생님".equals(MainFrm.userType.getName())){
                 Teacher teacher = (Teacher)MainFrm.userObject;
                 if(course.getTeacher_id() == teacher.getId()){
                     courseComboBox.addItem(course);
@@ -335,11 +335,11 @@ public class StatsScoreFrm extends JInternalFrame {
         setLanuage();
         DefaultCategoryDataset dataSet = new DefaultCategoryDataset();//创建一个数据集
         //dataSet.addValue(studentNum, courseName, "学生人数");//添加数据
-        dataSet.addValue(maxScore, courseName+"(学生人数:"+studentNum+")", "最高分");
-        dataSet.addValue(minScore, courseName+"(学生人数:"+studentNum+")", "最低分");
-        dataSet.addValue(midScore, courseName+"(学生人数:"+studentNum+")", "平均分");
+        dataSet.addValue(maxScore, courseName+"(학생 수:"+studentNum+")", "최고점");
+        dataSet.addValue(minScore, courseName+"(학생 수:"+studentNum+")", "최저점");
+        dataSet.addValue(midScore, courseName+"(학생 수:"+studentNum+")", "평균점");
         //创建一个chart对象，把数据集放进去
-        JFreeChart chart = ChartFactory.createBarChart3D("学生成绩统计情况", "成绩类别", "成绩分数", dataSet, PlotOrientation.VERTICAL, true, false, false);
+        JFreeChart chart = ChartFactory.createBarChart3D("학생 성적 통계 상황", "성적유형", "성적 점수", dataSet, PlotOrientation.VERTICAL, true, false, false);
         //创建一个图标panel
         chartPanel= new ChartPanel(chart);
         //将图标panel添加到要显示的panel上
@@ -353,10 +353,10 @@ public class StatsScoreFrm extends JInternalFrame {
         // TODO Auto-generated method stub
         setLanuage();
         DefaultPieDataset dataSet = new DefaultPieDataset();//创建数据集
-        dataSet.setValue("最高分",maxScore);//设置数据
-        dataSet.setValue("最低分",minScore);
-        dataSet.setValue("平均分",midScore);
-        JFreeChart chart = ChartFactory.createPieChart3D(courseName+"课程学生成绩统计", dataSet, true, true, false);
+        dataSet.setValue("최고점",maxScore);//设置数据
+        dataSet.setValue("최저점",minScore);
+        dataSet.setValue("평균점",midScore);
+        JFreeChart chart = ChartFactory.createPieChart3D(courseName+"커리큘럼 학생 성적 통계", dataSet, true, true, false);
         chartPanel = new ChartPanel(chart);
         chartPanel.setPreferredSize(new Dimension(540,420));
         viewPanel.add(chartPanel,BorderLayout.CENTER);
@@ -386,11 +386,11 @@ public class StatsScoreFrm extends JInternalFrame {
         //创建主题样式
         StandardChartTheme standardChartTheme=new StandardChartTheme("CN");
         //设置标题字体
-        standardChartTheme.setExtraLargeFont(new Font("隶书",Font.BOLD,20));
+        standardChartTheme.setExtraLargeFont(new Font("AppleMyungjo",Font.BOLD,20));
         //设置图例的字体
-        standardChartTheme.setRegularFont(new Font("宋书",Font.PLAIN,15));
+        standardChartTheme.setRegularFont(new Font("AppleMyungjo",Font.PLAIN,15));
         //设置轴向的字体
-        standardChartTheme.setLargeFont(new Font("宋书",Font.PLAIN,15));
+        standardChartTheme.setLargeFont(new Font("AppleMyungjo",Font.PLAIN,15));
         //应用主题样式
         ChartFactory.setChartTheme(standardChartTheme);
     }

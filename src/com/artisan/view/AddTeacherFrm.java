@@ -203,23 +203,23 @@ public class AddTeacherFrm extends JInternalFrame {
             teacherAge = Integer.parseInt(teacherAgeTextField.getText().toString());
         } catch (Exception e) {
             // TODO: handle exception
-            JOptionPane.showMessageDialog(this, "年龄只允许输入数字！");
+            JOptionPane.showMessageDialog(this, "나이는 숫자 입력만 가능합니다!");
             return;
         }
         if(StringUtil.isEmpty(teacherName)){
-            JOptionPane.showMessageDialog(this, "教师姓名必须填写！");
+            JOptionPane.showMessageDialog(this, "선생님 성함은 필수입니다!");
             return;
         }
         if(StringUtil.isEmpty(teacherTitle)){
-            JOptionPane.showMessageDialog(this, "教师职称必须填写！");
+            JOptionPane.showMessageDialog(this, "선생님 직함은 필수!");
             return;
         }
         if(teacherAge == 0 || teacherAge < 0){
-            JOptionPane.showMessageDialog(this, "教师年龄必须大于0！");
+            JOptionPane.showMessageDialog(this, "선생님 연령은 0보다 커야 합니다!");
             return;
         }
         if(StringUtil.isEmpty(teacherPassword)){
-            JOptionPane.showMessageDialog(this, "教师登录密码必须填写！");
+            JOptionPane.showMessageDialog(this, "선생님 로그인 비밀번호는 반드시 기입해야 합니다!");
             return;
         }
         Teacher teacher = new Teacher();
@@ -230,9 +230,9 @@ public class AddTeacherFrm extends JInternalFrame {
         teacher.setPassword(teacherPassword);
         TeacherDao teacherDao = new TeacherDao();
         if(teacherDao.addTeacher(teacher)){
-            JOptionPane.showMessageDialog(this, "教师添加成功！");
+            JOptionPane.showMessageDialog(this, "선생님 추가 성공!");
         }else{
-            JOptionPane.showMessageDialog(this, "教师添加失败！");
+            JOptionPane.showMessageDialog(this, "선생님 추가 실패!");
         }
         resetValue(ae);
     }

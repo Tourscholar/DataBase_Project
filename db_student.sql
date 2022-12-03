@@ -30,9 +30,9 @@ CREATE TABLE `s_admin` (
 -- ----------------------------
 -- Records of s_admin
 -- ----------------------------
-INSERT INTO `s_admin` VALUES ('1', '该号违规', '422227', '2022-12-02 14:24:09');
-INSERT INTO `s_admin` VALUES ('2', '小丑科技', '2', '2022-12-03 01:56:38');
-INSERT INTO `s_admin` VALUES ('3', 'admin', '123456', '2022-12-04 09:26:26');
+INSERT INTO `s_admin` VALUES ('1', 'admin1', '422227', '2022-12-02 14:24:09');
+INSERT INTO `s_admin` VALUES ('2', 'admin2', '2', '2022-12-03 01:56:38');
+INSERT INTO `s_admin` VALUES ('3', 'admin3', '123456', '2022-12-04 09:26:26');
 
 -- ----------------------------
 -- Table structure for s_attendance
@@ -72,11 +72,11 @@ CREATE TABLE `s_class` (
 -- ----------------------------
 -- Records of s_class
 -- ----------------------------
-INSERT INTO `s_class` VALUES ('1', '1班', '1班1班，我是1班。再说一遍，我是1班！');
-INSERT INTO `s_class` VALUES ('2', '2班', '2班2班，我是2班。再说一遍，我是2班！');
-INSERT INTO `s_class` VALUES ('3', '3班', '3班3班，我是3班。再说一遍，我是3班！');
-INSERT INTO `s_class` VALUES ('4', '4班', '4班4班，我是4班。再说一遍，我是4班！');
-INSERT INTO `s_class` VALUES ('5', '5班', '5班5班，我是5班。再说一遍，我是5班！');
+INSERT INTO `s_class` VALUES ('1', '1반', '1반이다');
+INSERT INTO `s_class` VALUES ('2', '2반', '2반이다');
+INSERT INTO `s_class` VALUES ('3', '3반', '3반이다');
+INSERT INTO `s_class` VALUES ('4', '4반', '4반이다');
+INSERT INTO `s_class` VALUES ('5', '5반', '5반이다');
 
 -- ----------------------------
 -- Table structure for s_course
@@ -97,11 +97,11 @@ CREATE TABLE `s_course` (
 -- ----------------------------
 -- Records of s_course
 -- ----------------------------
-INSERT INTO `s_course` VALUES ('1', 'MySQL数据库', '1', '60', '很重要哦，必拿满分！', '0');
-INSERT INTO `s_course` VALUES ('2', 'JavaScript开发', '2', '60', '网页设计的辅助在我看来', '0');
-INSERT INTO `s_course` VALUES ('3', '网页设计', '4', '60', '建设了第一个自己的网站：littleugly.cn', '0');
-INSERT INTO `s_course` VALUES ('4', 'Linux', '6', '60', '学习一门新系统，为以后云服务器打下基础', '0');
-INSERT INTO `s_course` VALUES ('5', '计算机网络基础', '3', '60', '网络的常识课', '0');
+INSERT INTO `s_course` VALUES ('1', 'MySQL 데이터베이스', '1', '60', '중요!', '0');
+INSERT INTO `s_course` VALUES ('2', '자바스크립트 개발', '2', '60', '웹 디자인.', '0');
+INSERT INTO `s_course` VALUES ('3', '웹 디자인', '4', '60', '웹 페이지를 작성', '0');
+INSERT INTO `s_course` VALUES ('4', 'Linux', '6', '60', '운영 체제.', '0');
+INSERT INTO `s_course` VALUES ('5', '컴퓨터 네트워크', '3', '60', '중요!', '0');
 
 -- ----------------------------
 -- Table structure for s_score
@@ -177,13 +177,13 @@ CREATE TABLE `s_student` (
 -- ----------------------------
 -- Records of s_student
 -- ----------------------------
-INSERT INTO `s_student` VALUES ('1', '张三', '3', '1', '女');
-INSERT INTO `s_student` VALUES ('2', '李四', '2', '2', '男');
-INSERT INTO `s_student` VALUES ('3', '王五', '3', '3', '男');
-INSERT INTO `s_student` VALUES ('4', '狗六', '4', '4', '男');
-INSERT INTO `s_student` VALUES ('5', '刘七', '5', '5', '男');
-INSERT INTO `s_student` VALUES ('6', '王八', '3', '6', '女');
-INSERT INTO `s_student` VALUES ('7', '九九归一', '1', '7', '男');
+INSERT INTO `s_student` VALUES ('1', '학생1', '3', '1', '여자');
+INSERT INTO `s_student` VALUES ('2', '학생2', '2', '2', '남자');
+INSERT INTO `s_student` VALUES ('3', '학생3', '3', '3', '남자');
+INSERT INTO `s_student` VALUES ('4', '학생4', '4', '4', '남자');
+INSERT INTO `s_student` VALUES ('5', '학생5', '5', '5', '남자');
+INSERT INTO `s_student` VALUES ('6', '학생6', '3', '6', '여자');
+INSERT INTO `s_student` VALUES ('7', '학생7', '1', '7', '남자');
 
 -- ----------------------------
 -- Table structure for s_teacher
@@ -202,25 +202,25 @@ CREATE TABLE `s_teacher` (
 -- ----------------------------
 -- Records of s_teacher
 -- ----------------------------
-INSERT INTO `s_teacher` VALUES ('1', '刘', '女', '数据库教师', '40', '1');
-INSERT INTO `s_teacher` VALUES ('2', '母', '女', 'JavaScript教师', '40', '2');
-INSERT INTO `s_teacher` VALUES ('3', '鲁', '女', '计算机网络基础教师', '40', '3');
-INSERT INTO `s_teacher` VALUES ('4', '邵', '女', '网页设计教师', '40', '4');
-INSERT INTO `s_teacher` VALUES ('5', '杨', '男', '校长', '40', '5');
-INSERT INTO `s_teacher` VALUES ('6', '张', '女', 'Linux教师', '40', '6');
+INSERT INTO `s_teacher` VALUES ('1', '선생님1', '여자', '데이터베이스선생님', '40', '1');
+INSERT INTO `s_teacher` VALUES ('2', '선생님2', '여자', 'JavaScript선생님', '40', '2');
+INSERT INTO `s_teacher` VALUES ('3', '선생님3', '여자', '컴퓨터 네트워크선생님', '40', '3');
+INSERT INTO `s_teacher` VALUES ('4', '선생님4', '여자', '웹 디자인선생님', '40', '4');
+INSERT INTO `s_teacher` VALUES ('5', '선생님5', '남자', '총장', '40', '5');
+INSERT INTO `s_teacher` VALUES ('6', '선생님6', '여자', 'Linux선생님', '40', '6');
 
 -- ----------------------------
 -- View structure for 查看当前所有学生性别和所在班级，并显示该班级简介
 -- ----------------------------
-DROP VIEW IF EXISTS `查看当前所有学生性别和所在班级，并显示该班级简介`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `查看当前所有学生性别和所在班级，并显示该班级简介` AS select `s_student`.`sex` AS `sex`,`s_student`.`name` AS `name`,`s_student`.`id` AS `id`,`s_class`.`info` AS `info` from (`s_student` join `s_class` on((`s_student`.`classId` = `s_class`.`id`))) ;
+DROP VIEW IF EXISTS `현재 모든 학생의 성별과 학급을 보고 해당 학급의 프로필을 표시합니다`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `현재 모든 학생의 성별과 학급을 보고 해당 학급의 프로필을 표시합니다` AS select `s_student`.`sex` AS `sex`,`s_student`.`name` AS `name`,`s_student`.`id` AS `id`,`s_class`.`info` AS `info` from (`s_student` join `s_class` on((`s_student`.`classId` = `s_class`.`id`))) ;
 
 -- ----------------------------
 -- Function structure for 查找该学号学生
 -- ----------------------------
-DROP FUNCTION IF EXISTS `查找该学号学生`;
+DROP FUNCTION IF EXISTS `해당 학번 학생을 찾다`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` FUNCTION `查找该学号学生`(`id` int) RETURNS varchar(255) CHARSET utf8
+CREATE DEFINER=`root`@`localhost` FUNCTION `해당 학번 학생을 찾다`(`id` int) RETURNS varchar(255) CHARSET utf8
 BEGIN
 	#Routine body goes here...
 
@@ -232,14 +232,14 @@ DELIMITER ;
 -- ----------------------------
 -- Event structure for 每5周执行一次添加新同学的事件，名字叫张三
 -- ----------------------------
-DROP EVENT IF EXISTS `每5周执行一次添加新同学的事件，名字叫张三`;
+DROP EVENT IF EXISTS `5주에 한 번씩 새로운 학우를 추가하는 사건, 이름은 장삼`;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` EVENT `每5周执行一次添加新同学的事件，名字叫张三` ON SCHEDULE AT '2021-01-28 02:56:24' ON COMPLETION NOT PRESERVE ENABLE DO INSERT INTO s_student (id,name) VALUES('1','张三')
+CREATE DEFINER=`root`@`localhost` EVENT `5주에 한 번씩 새로운 학우를 추가하는 사건, 이름은 장삼` ON SCHEDULE AT '2021-01-28 02:56:24' ON COMPLETION NOT PRESERVE ENABLE DO INSERT INTO s_student (id,name) VALUES('1','张三')
 ;
 ;;
 DELIMITER ;
-DROP TRIGGER IF EXISTS `选课人数增加`;
+DROP TRIGGER IF EXISTS `수강 신청 인원이 증가`;
 DELIMITER ;;
-CREATE TRIGGER `选课人数增加` AFTER INSERT ON `s_course` FOR EACH ROW insert into oldtable(code) values(newtable.code)
+CREATE TRIGGER `수강 신청 인원이 증가` AFTER INSERT ON `s_course` FOR EACH ROW insert into oldtable(code) values(newtable.code)
 ;;
 DELIMITER ;

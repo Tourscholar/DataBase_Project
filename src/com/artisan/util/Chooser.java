@@ -545,7 +545,7 @@ public class Chooser extends JPanel{
         text.setText("2013-10-11");
         ser.register(text);
 
-        Chooser ser2 = Chooser.getInstance("yyyy年MM月dd日");
+        Chooser ser2 = Chooser.getInstance("yyyy년MM월dd일");
         JLabel label = new JLabel("please click me.");
         label.setBounds(10, 50, 200, 30);
         ser2.register(label);

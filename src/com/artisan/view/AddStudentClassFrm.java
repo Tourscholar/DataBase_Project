@@ -131,7 +131,7 @@ public class AddStudentClassFrm extends JInternalFrame {
         String className = classNameTextField.getText().toString();
         String classInfo = classInfotextArea.getText().toString();
         if(StringUtil.isEmpty(className)){
-            JOptionPane.showMessageDialog(this, "班级名称不能为空！");
+            JOptionPane.showMessageDialog(this, "학급 이름은 비워둘 수 없습니다!");
             return;
         }
         StudentClass scl = new StudentClass();
@@ -139,9 +139,9 @@ public class AddStudentClassFrm extends JInternalFrame {
         scl.setInfo(classInfo);
         ClassDao classDao = new ClassDao();
         if(classDao.addClass(scl)){
-            JOptionPane.showMessageDialog(this, "班级添加成功！");
+            JOptionPane.showMessageDialog(this, "학급 추가 성공!");
         }else{
-            JOptionPane.showMessageDialog(this, "班级添加失败！");
+            JOptionPane.showMessageDialog(this, "학급 추가 실패!");
         }
         classDao.closeDao();
         resetValue(ae);

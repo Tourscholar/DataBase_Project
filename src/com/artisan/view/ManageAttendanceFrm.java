@@ -187,18 +187,18 @@ public class ManageAttendanceFrm extends JInternalFrame {
     }
     protected void cancelAttendanceAct(ActionEvent ae) {
         // TODO Auto-generated method stub
-        if(JOptionPane.showConfirmDialog(this, "确定删除签到信息么？") != JOptionPane.OK_OPTION)return;
+        if(JOptionPane.showConfirmDialog(this, "로그인 정보를 삭제하시겠습니까?") != JOptionPane.OK_OPTION)return;
         int row = attendancedListTable.getSelectedRow();
         if(row == -1){
-            JOptionPane.showMessageDialog(this, "请先选择一行数据！");
+            JOptionPane.showMessageDialog(this, "데이터 한 줄 먼저 선택해 주세요!");
             return;
         }
         int attendanceId = Integer.parseInt(attendancedListTable.getValueAt(row, 0).toString());
         AttendanceDao attendanceDao = new AttendanceDao();
         if(attendanceDao.delete(attendanceId)){
-            JOptionPane.showMessageDialog(this, "成功删除签到信息！");
+            JOptionPane.showMessageDialog(this, "로그인 정보를 삭제했습니다!");
         }else{
-            JOptionPane.showMessageDialog(this, "操作失败！");
+            JOptionPane.showMessageDialog(this, "작업 실패!");
         }
         setTable();
     }
@@ -214,13 +214,13 @@ public class ManageAttendanceFrm extends JInternalFrame {
         attendance.setCourse_id(course.getId());
         AttendanceDao attendanceDao = new AttendanceDao();
         if(attendanceDao.isAttendanced(attendance)){
-            JOptionPane.showMessageDialog(this, "已经签到，请勿重复签到！");
+            JOptionPane.showMessageDialog(this, "이미 출석체크를 했으니 중복체크를 하지 마세요!");
             return;
         }
         if(attendanceDao.addAttendance(attendance)){
-            JOptionPane.showMessageDialog(this, "签到成功！");
+            JOptionPane.showMessageDialog(this, "출석체크 성공!");
         }else{
-            JOptionPane.showMessageDialog(this, "签到失败！");
+            JOptionPane.showMessageDialog(this, "출석체크 실패!");
         }
         attendanceDao.closeDao();
         setTable();
@@ -266,7 +266,7 @@ public class ManageAttendanceFrm extends JInternalFrame {
         courseList = courseDao.getCourseList(new Course());
         courseDao.closeDao();
         for (Course course : courseList) {
-            if("教师".equals(MainFrm.userType.getName())){
+            if("선생님".equals(MainFrm.userType.getName())){
                 Teacher teacher = (Teacher)MainFrm.userObject;
                 if(course.getTeacher_id() == teacher.getId()){
                     courseComboBox.addItem(course);

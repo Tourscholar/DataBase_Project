@@ -249,7 +249,7 @@ public class ManageSelectedCourseFrm extends JInternalFrame {
         // TODO Auto-generated method stub
         int row = selectedCourseListTable.getSelectedRow();
         if(row == -1){
-            JOptionPane.showMessageDialog(this, "请选择要修改的数据！");
+            JOptionPane.showMessageDialog(this, "수정할 데이터를 선택하십시오!");
             return;
         }
         int selected_id = Integer.parseInt(selectedCourseListTable.getValueAt(row, 0).toString());
@@ -260,9 +260,9 @@ public class ManageSelectedCourseFrm extends JInternalFrame {
         CourseDao courseDao = new CourseDao();
         if(scDao.delete(selected_id)){
             if(courseDao.updateSelectedNum(getCourseIdByName(courseName), -1)){
-                JOptionPane.showMessageDialog(this, "退课成功！");
+                JOptionPane.showMessageDialog(this, "수업 취소 성공!");
             }else{
-                JOptionPane.showMessageDialog(this, "退课成功，更新课程信息失败！");
+                JOptionPane.showMessageDialog(this, "탈퇴 성공, 수업 정보 업데이트 실패!");
             }
         }else{
             JOptionPane.showMessageDialog(this, "退课失败！");
@@ -276,7 +276,7 @@ public class ManageSelectedCourseFrm extends JInternalFrame {
         // TODO Auto-generated method stub
         int row = selectedCourseListTable.getSelectedRow();
         if(row == -1){
-            JOptionPane.showMessageDialog(this, "请选择要修改的数据！");
+            JOptionPane.showMessageDialog(this, "수정할 데이터를 선택하십시오!");
             return;
         }
         int selected_id = Integer.parseInt(selectedCourseListTable.getValueAt(row, 0).toString());
@@ -285,12 +285,12 @@ public class ManageSelectedCourseFrm extends JInternalFrame {
         Student student = (Student) editSelectedStudentComboBox.getSelectedItem();
         Course course = (Course) editSelectedCourseComboBox.getSelectedItem();
         if(studentName.equals(student.getName())&&courseName.equals(course.getName())){
-            JOptionPane.showMessageDialog(this, "还未修改数据！");
+            JOptionPane.showMessageDialog(this, "아직 데이터를 수정하지 않았습니다!");
             return;
         }
         CourseDao courseDao = new CourseDao();
         if(!courseDao.selectedEnable(course.getId())){
-            JOptionPane.showMessageDialog(this, "该课程已经选满，不能再选!");
+            JOptionPane.showMessageDialog(this, "해당 강좌는 이미 수강이 다 차서 더 이상 수강할 수 없습니다!");
             return;
         }
 
@@ -300,16 +300,16 @@ public class ManageSelectedCourseFrm extends JInternalFrame {
         sc.setCourse_id(course.getId());
         SelectedCourseDao scDao = new SelectedCourseDao();
         if(scDao.isSelected(sc)){
-            JOptionPane.showMessageDialog(this, "已经选过这门课程了，不能再选!");
+            JOptionPane.showMessageDialog(this, "이 강좌는 이미 수강신청을 했으니 다시 수강할 수 없습니다!");
             return;
         }
         if(scDao.updateSelectedCourse(sc)){
             if(courseDao.updateSelectedNum(sc.getCourse_id(),1)){
                 if(courseDao.updateSelectedNum(getCourseIdByName(courseName), -1)){
-                    JOptionPane.showMessageDialog(this, "修改成功！!");
+                    JOptionPane.showMessageDialog(this, "수정 성공!");
                 }
             }else{
-                JOptionPane.showMessageDialog(this, "修改成功，课程信息更新失败!");
+                JOptionPane.showMessageDialog(this, "수정 성공, 과정 정보 업데이트 실패!");
             }
         }
         courseDao.closeDao();
@@ -355,22 +355,22 @@ public class ManageSelectedCourseFrm extends JInternalFrame {
         sc.setCourse_id(scourse.getId());
         CourseDao courseDao = new CourseDao();
         if(!courseDao.selectedEnable(scourse.getId())){
-            JOptionPane.showMessageDialog(this, "该课程已经选满，不能再选!");
+            JOptionPane.showMessageDialog(this, "해당 강좌는 이미 수강이 다 차서 더 이상 수강할 수 없습니다!");
             return;
         }
         SelectedCourseDao scDao = new SelectedCourseDao();
         if(scDao.isSelected(sc)){
-            JOptionPane.showMessageDialog(this, "已经选过这门课程了，不能再选!");
+            JOptionPane.showMessageDialog(this, "이 강좌는 이미 수강신청을 했으니 다시 수강할 수 없습니다!");
             return;
         }
         if(scDao.addSelectedCourse(sc)){
             if(courseDao.updateSelectedNum(sc.getCourse_id(),1)){
-                JOptionPane.showMessageDialog(this, "选课成功！!");
+                JOptionPane.showMessageDialog(this, "수강신청 성공!");
             }else{
-                JOptionPane.showMessageDialog(this, "选课成功，课程信息更新失败!");
+                JOptionPane.showMessageDialog(this, "수강신청 성공, 수강정보 업데이트 실패!");
             }
         }else{
-            JOptionPane.showMessageDialog(this, "选课失败!");
+            JOptionPane.showMessageDialog(this, "수강신청 실패!");
         }
         courseDao.closeDao();
         scDao.closeDao();
@@ -385,7 +385,7 @@ public class ManageSelectedCourseFrm extends JInternalFrame {
             searchStudentComboBox.addItem(student);
             editSelectedStudentComboBox.addItem(student);
         }
-        if("学生".equals(MainFrm.userType.getName())){
+        if("학생".equals(MainFrm.userType.getName())){
             Student user = (Student) MainFrm.userObject;
             for(int i = 0; i < searchStudentComboBox.getItemCount();i++){
                 Student student = (Student) searchStudentComboBox.getItemAt(i);
@@ -445,7 +445,7 @@ public class ManageSelectedCourseFrm extends JInternalFrame {
         return 0;
     }
     private void setAuthority(){
-        if("学生".equals(MainFrm.userType.getName())){
+        if("학생".equals(MainFrm.userType.getName())){
             searchStudentComboBox.setEnabled(false);
             editSelectedStudentComboBox.setEnabled(false);
         }

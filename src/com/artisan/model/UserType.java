@@ -1,7 +1,7 @@
 package com.artisan.model;
 
 public enum UserType {
-    ADMIN("系统管理员",0),TEACHER("教师",1),STUDENT("学生",2);
+    ADMIN("시스템 관리자",0),TEACHER("선생님",1),STUDENT("학생",2);
     private String name;
     private int index;
     private UserType(String name,int index){

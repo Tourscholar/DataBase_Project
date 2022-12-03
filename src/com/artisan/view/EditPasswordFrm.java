@@ -158,15 +158,15 @@ public class EditPasswordFrm extends JInternalFrame {
                                 .addContainerGap())
         );
         contentPane.setLayout(gl_contentPane);
-        if("系统管理员".equals(MainFrm.userType.getName())){
+        if("시스템 관리자".equals(MainFrm.userType.getName())){
             Admin admin = (Admin)MainFrm.userObject;
-            currentUserLabel.setText("【系统管理员】" + admin.getName());
-        }else if("学生".equals(MainFrm.userType.getName())){
+            currentUserLabel.setText("【시스템 관리자】" + admin.getName());
+        }else if("학생".equals(MainFrm.userType.getName())){
             Student student = (Student)MainFrm.userObject;
-            currentUserLabel.setText("【学生】" + student.getName());
+            currentUserLabel.setText("【학생】" + student.getName());
         }else{
             Teacher teacher = (Teacher)MainFrm.userObject;
-            currentUserLabel.setText("【学生】" + teacher.getName());
+            currentUserLabel.setText("【학생】" + teacher.getName());
         }
     }
 
@@ -176,22 +176,22 @@ public class EditPasswordFrm extends JInternalFrame {
         String newPassword = newPasswordTextField.getText().toString();
         String conformPassword = confirmPasswordTextField.getText().toString();
         if(StringUtil.isEmpty(oldPassword)){
-            JOptionPane.showMessageDialog(this, "请填写旧密码！");
+            JOptionPane.showMessageDialog(this, "구 비밀번호를 기입해 주세요!");
             return;
         }
         if(StringUtil.isEmpty(newPassword)){
-            JOptionPane.showMessageDialog(this, "请填写新密码！");
+            JOptionPane.showMessageDialog(this, "새 비밀번호를 입력해 주세요!");
             return;
         }
         if(StringUtil.isEmpty(conformPassword)){
-            JOptionPane.showMessageDialog(this, "请确认新密码！");
+            JOptionPane.showMessageDialog(this, "새 비밀번호 확인해주세요!");
             return;
         }
         if(!newPassword.equals(conformPassword)){
-            JOptionPane.showMessageDialog(this, "两次密码输入不一致！");
+            JOptionPane.showMessageDialog(this, "두번의 비밀번호 입력이 일치하지 않습니다!");
             return;
         }
-        if("系统管理员".equals(MainFrm.userType.getName())){
+        if("시스템 관리자".equals(MainFrm.userType.getName())){
             AdminDao adminDao = new AdminDao();
             Admin adminTmp = new Admin();
             Admin admin = (Admin)MainFrm.userObject;
@@ -202,7 +202,7 @@ public class EditPasswordFrm extends JInternalFrame {
             adminDao.closeDao();
             return;
         }
-        if("学生".equals(MainFrm.userType.getName())){
+        if("학생".equals(MainFrm.userType.getName())){
             StudentDao studentDao = new StudentDao();
             Student studentTmp = new Student();
             Student student = (Student)MainFrm.userObject;
@@ -213,7 +213,7 @@ public class EditPasswordFrm extends JInternalFrame {
             studentDao.closeDao();
             return;
         }
-        if("教师".equals(MainFrm.userType.getName())){
+        if("선생님".equals(MainFrm.userType.getName())){
             TeacherDao teacherDao = new TeacherDao();
             Teacher teacherTmp = new Teacher();
             Teacher teacher = (Teacher)MainFrm.userObject;

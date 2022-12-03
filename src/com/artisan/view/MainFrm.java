@@ -332,7 +332,7 @@ public class MainFrm extends JFrame {
         desktopPane.add(editPasswordFrm);
     }
     private void setAuthority(){
-        if("学生".equals(userType.getName())){
+        if("학생".equals(userType.getName())){
             addStudentMenuItem.setEnabled(false);
             manageClassMenu.setEnabled(false);
             manageTeacherMenu.setEnabled(false);
@@ -345,7 +345,7 @@ public class MainFrm extends JFrame {
             manageScoreMenuItem.setEnabled(false);
             scoreStatsMenuItem.setEnabled(false);
         }
-        if("教师".equals(userType.getName())){
+        if("선생님".equals(userType.getName())){
             addTeacherMenuItem.setEnabled(false);
         }
     }

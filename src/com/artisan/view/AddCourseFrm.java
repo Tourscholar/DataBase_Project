@@ -178,15 +178,15 @@ public class AddCourseFrm extends JInternalFrame {
             studentMaxNum = Integer.parseInt(studentNumTextField.getText());
         } catch (Exception e) {
             // TODO: handle exception
-            JOptionPane.showMessageDialog(this, "学生人数只能输入数字!");
+            JOptionPane.showMessageDialog(this, "학생 수는 숫자만 입력할 수 있습니다!");
             return;
         }
         if(StringUtil.isEmpty(couserName)){
-            JOptionPane.showMessageDialog(this, "请输入课程名称!");
+            JOptionPane.showMessageDialog(this, "과정명을 입력하세요!");
             return;
         }
         if(studentMaxNum <= 0){
-            JOptionPane.showMessageDialog(this, "学生人数只能输入大于0的数字!");
+            JOptionPane.showMessageDialog(this, "학생 수는 0보다 큰 숫자만 입력할 수 있습니다!");
             return;
         }
         Course course = new Course();
@@ -196,9 +196,9 @@ public class AddCourseFrm extends JInternalFrame {
         course.setTeacher_id(selectedTeacher.getId());
         CourseDao courseDao = new CourseDao();
         if(courseDao.addCourse(course)){
-            JOptionPane.showMessageDialog(this, "添加成功!");
+            JOptionPane.showMessageDialog(this, "추가 성공!");
         }else{
-            JOptionPane.showMessageDialog(this, "添加失败!");
+            JOptionPane.showMessageDialog(this, "추가 실패했습니다!");
         }
         courseDao.closeDao();
         resetValue(ae);

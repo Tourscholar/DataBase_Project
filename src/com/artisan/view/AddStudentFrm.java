@@ -196,11 +196,11 @@ public class AddStudentFrm extends JInternalFrame {
         String studentName = studentNameTextField.getText().toString();
         String studentPassword = studentPasswordField.getText().toString();
         if(StringUtil.isEmpty(studentName)){
-            JOptionPane.showMessageDialog(this, "请填写学生姓名!");
+            JOptionPane.showMessageDialog(this, "학생 이름을 기입해 주세요!");
             return;
         }
         if(StringUtil.isEmpty(studentPassword)){
-            JOptionPane.showMessageDialog(this, "请填写密码!");
+            JOptionPane.showMessageDialog(this, "비밀번호 입력해주세요!");
             return;
         }
         StudentClass sc = (StudentClass)studentClassComboBox.getSelectedItem();
@@ -212,9 +212,9 @@ public class AddStudentFrm extends JInternalFrame {
         student.setSex(sex);
         StudentDao studentDao = new StudentDao();
         if(studentDao.addStudent(student)){
-            JOptionPane.showMessageDialog(this, "添加成功!");
+            JOptionPane.showMessageDialog(this, "추가 성공!");
         }else{
-            JOptionPane.showMessageDialog(this, "添加失败!");
+            JOptionPane.showMessageDialog(this, "추가 실패!");
         }
         resetValue(ae);
     }

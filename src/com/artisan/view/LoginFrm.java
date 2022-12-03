@@ -169,15 +169,15 @@ public class LoginFrm extends JFrame {
         String password = passwordTextField.getText().toString();
         UserType selectedItem = (UserType)userTypeComboBox.getSelectedItem();
         if(StringUtil.isEmpty(userName)){
-            JOptionPane.showMessageDialog(this, "用户名不能为空！");
+            JOptionPane.showMessageDialog(this, "아이디는 비워둘 수 없습니다!");
             return;
         }
         if(StringUtil.isEmpty(password)){
-            JOptionPane.showMessageDialog(this, "密码不能为空！");
+            JOptionPane.showMessageDialog(this, "비밀번호는 비워둘 수 없습니다!");
             return;
         }
         Admin admin = null;
-        if("系统管理员".equals(selectedItem.getName())){
+        if("시스템 관리자".equals(selectedItem.getName())){
             AdminDao adminDao = new AdminDao();
             Admin adminTmp = new Admin();
             adminTmp.setName(userName);
@@ -185,13 +185,13 @@ public class LoginFrm extends JFrame {
             admin = adminDao.login(adminTmp);
             adminDao.closeDao();
             if(admin == null){
-                JOptionPane.showMessageDialog(this, "用户名或密码错误！");
+                JOptionPane.showMessageDialog(this, "아이디나 비밀번호가 틀립니다!");
                 return;
             }
-            JOptionPane.showMessageDialog(this, "欢迎【"+selectedItem.getName()+"】："+admin.getName()+"登录本系统！");
+            JOptionPane.showMessageDialog(this, "["+selectedItem.getName()+"]: "+admin.getName()+"이 시스템에 로그인하세요! 환영합니다");
             this.dispose();
             new MainFrm(selectedItem, admin).setVisible(true);
-        }else if("教师".equals(selectedItem.getName())){
+        }else if("선생님".equals(selectedItem.getName())){
             //教师登录
             Teacher teacher = null;
             TeacherDao teacherDao = new TeacherDao();
@@ -201,10 +201,10 @@ public class LoginFrm extends JFrame {
             teacher = teacherDao.login(teacherTmp);
             teacherDao.closeDao();
             if(teacher == null){
-                JOptionPane.showMessageDialog(this, "用户名或密码错误！");
+                JOptionPane.showMessageDialog(this, "아이디나 비밀번호가 틀립니다!");
                 return;
             }
-            JOptionPane.showMessageDialog(this, "欢迎【"+selectedItem.getName()+"】："+teacher.getName()+"登录本系统！");
+            JOptionPane.showMessageDialog(this, "["+selectedItem.getName()+"]: "+teacher.getName()+"이 시스템에 로그인하세요! 환영합니다");
             this.dispose();
             new MainFrm(selectedItem, teacher).setVisible(true);
         }else{
@@ -217,10 +217,10 @@ public class LoginFrm extends JFrame {
             student = studentDao.login(studentTmp);
             studentDao.closeDao();
             if(student == null){
-                JOptionPane.showMessageDialog(this, "用户名或密码错误！");
+                JOptionPane.showMessageDialog(this, "아이디나 비밀번호가 틀립니다!");
                 return;
             }
-            JOptionPane.showMessageDialog(this, "欢迎【"+selectedItem.getName()+"】："+student.getName()+"登录本系统！");
+            JOptionPane.showMessageDialog(this, "["+selectedItem.getName()+"]: "+student.getName()+"이 시스템에 로그인하세요! 환영합니다!");
             this.dispose();
             new MainFrm(selectedItem, student).setVisible(true);
         }

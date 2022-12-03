@@ -45,11 +45,11 @@ public class DbUtil {
         DbUtil dbUtil=new DbUtil();
         try {
             dbUtil.getCon();
-            System.out.println("数据库连接成功！");
+            System.out.println("데이터베이스 연결 성공!");
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            System.out.println("数据库连接失败");
+            System.out.println("데이터베이스 연결 실패");
         }
     }
 }

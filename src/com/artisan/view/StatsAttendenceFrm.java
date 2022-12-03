@@ -166,7 +166,7 @@ public class StatsAttendanceFrm extends JInternalFrame {
             public void actionPerformed(ActionEvent arg0) {
                 String dateString = dateTextField.getText().toString();
                 if(StringUtil.isEmpty(dateString)){
-                    JOptionPane.showMessageDialog(StatsAttendanceFrm.this, "请选择日期!");
+                    JOptionPane.showMessageDialog(StatsAttendanceFrm.this, "날짜 선택!");
                     return;
                 }
                 //柱状图显示
@@ -183,7 +183,7 @@ public class StatsAttendanceFrm extends JInternalFrame {
                 //饼状图显示
                 String dateString = dateTextField.getText().toString();
                 if(StringUtil.isEmpty(dateString)){
-                    JOptionPane.showMessageDialog(StatsAttendanceFrm.this, "请选择日期!");
+                    JOptionPane.showMessageDialog(StatsAttendanceFrm.this, "날짜 선택!");
                     return;
                 }
                 //柱状图显示
@@ -257,10 +257,10 @@ public class StatsAttendanceFrm extends JInternalFrame {
         // TODO Auto-generated method stub
         setLanuage();
         DefaultPieDataset dataSet = new DefaultPieDataset();//创建数据集
-        dataSet.setValue("出勤",attendanceNum);//设置数据
-        dataSet.setValue("缺勤人树",selected_num-attendanceNum);
-        dataSet.setValue("总人数",selected_num);
-        JFreeChart chart = ChartFactory.createPieChart3D("学生考勤签到统计", dataSet, true, true, false);
+        dataSet.setValue("출석",attendanceNum);//设置数据
+        dataSet.setValue("결석 인수",selected_num-attendanceNum);
+        dataSet.setValue("총인수",selected_num);
+        JFreeChart chart = ChartFactory.createPieChart3D("학생 출석체크 통계", dataSet, true, true, false);
         chartPanel = new ChartPanel(chart);
         chartPanel.setPreferredSize(new Dimension(540,420));
         statsListPanel.add(chartPanel,BorderLayout.CENTER);
@@ -284,7 +284,7 @@ public class StatsAttendanceFrm extends JInternalFrame {
         courseList = courseDao.getCourseList(new Course());
         courseDao.closeDao();
         for (Course course : courseList) {
-            if("教师".equals(MainFrm.userType.getName())){
+            if("선생님".equals(MainFrm.userType.getName())){
                 Teacher teacher = (Teacher)MainFrm.userObject;
                 if(course.getTeacher_id() == teacher.getId()){
                     courseComboBox.addItem(course);
@@ -323,11 +323,11 @@ public class StatsAttendanceFrm extends JInternalFrame {
     private void drawBar(int attendanceNum,int studentNum, String date){
         setLanuage();
         DefaultCategoryDataset dataSet = new DefaultCategoryDataset();//创建一个数据集
-        dataSet.addValue(attendanceNum, date, "出席人数");//添加数据
-        dataSet.addValue(studentNum-attendanceNum, date, "缺勤人数");
-        dataSet.addValue(studentNum, date, "总人数");
+        dataSet.addValue(attendanceNum, date, "출석 인원수");//添加数据
+        dataSet.addValue(studentNum-attendanceNum, date, "결석 인수");
+        dataSet.addValue(studentNum, date, "총인수");
         //创建一个chart对象，把数据集放进去
-        JFreeChart chart = ChartFactory.createBarChart3D("学生签到统计情况", "出席类别", "天数", dataSet, PlotOrientation.VERTICAL, true, false, false);
+        JFreeChart chart = ChartFactory.createBarChart3D("학생 출석 통계 상황", "출석 유형", "일수", dataSet, PlotOrientation.VERTICAL, true, false, false);
         //创建一个图标panel
         chartPanel= new ChartPanel(chart);
         //将图标panel添加到要显示的panel上
@@ -346,11 +346,11 @@ public class StatsAttendanceFrm extends JInternalFrame {
         //创建主题样式
         StandardChartTheme standardChartTheme=new StandardChartTheme("CN");
         //设置标题字体
-        standardChartTheme.setExtraLargeFont(new Font("隶书",Font.BOLD,20));
+        standardChartTheme.setExtraLargeFont(new Font("AppleMyungjo",Font.BOLD,20));
         //设置图例的字体
-        standardChartTheme.setRegularFont(new Font("宋书",Font.PLAIN,15));
+        standardChartTheme.setRegularFont(new Font("AppleMyungjo",Font.PLAIN,15));
         //设置轴向的字体
-        standardChartTheme.setLargeFont(new Font("宋书",Font.PLAIN,15));
+        standardChartTheme.setLargeFont(new Font("AppleMyungjo",Font.PLAIN,15));
         //应用主题样式
         ChartFactory.setChartTheme(standardChartTheme);
     }

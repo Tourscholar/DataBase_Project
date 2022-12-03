@@ -261,14 +261,14 @@ public class ManageCourseFrm extends JInternalFrame {
         // TODO Auto-generated method stub
         int row = courseListTable.getSelectedRow();
         if(row == -1){
-            JOptionPane.showMessageDialog(this, "请选中要修改的数据！");
+            JOptionPane.showMessageDialog(this, "수정할 데이터를 선택하십시오!");
             return;
         }
         int course_id = Integer.parseInt(courseListTable.getValueAt(row, 0).toString());
         Teacher teacher = (Teacher) editCourseTeachComboBox.getSelectedItem();
         String courseName = editCourseTextField.getText().toString();
         if(StringUtil.isEmpty(courseName)){
-            JOptionPane.showMessageDialog(this, "课程名称不能为空！");
+            JOptionPane.showMessageDialog(this, "과정 이름은 비워둘 수 없습니다!");
             return;
         }
         int max_student_num = 0;
@@ -276,11 +276,11 @@ public class ManageCourseFrm extends JInternalFrame {
             max_student_num = Integer.parseInt(editCourseStudentNumTextField.getText().toString());
         } catch (Exception e) {
             // TODO: handle exception
-            JOptionPane.showMessageDialog(this, "学生人数请输入大于0的整数！");
+            JOptionPane.showMessageDialog(this, "학생 수는 0보다 큰 정수를 입력하세요!");
             return;
         }
         if(max_student_num <= 0){
-            JOptionPane.showMessageDialog(this, "学生人数请输入大于0的整数！");
+            JOptionPane.showMessageDialog(this, "학생 수는 0보다 큰 정수를 입력하세요!");
             return;
         }
         String courseInfo = editCourseInfoTextArea.getText().toString();
@@ -292,9 +292,9 @@ public class ManageCourseFrm extends JInternalFrame {
         course.setInfo(courseInfo);
         CourseDao courseDao = new CourseDao();
         if(courseDao.update(course)){
-            JOptionPane.showMessageDialog(this, "修改成功！");
+            JOptionPane.showMessageDialog(this, "수정 성공!");
         }else{
-            JOptionPane.showMessageDialog(this, "修改失败！");
+            JOptionPane.showMessageDialog(this, "수정 실패!");
         }
         courseDao.closeDao();
         setCourseListTable(new Course());
@@ -334,15 +334,15 @@ public class ManageCourseFrm extends JInternalFrame {
         // TODO Auto-generated method stub
         int row = courseListTable.getSelectedRow();
         if(row == -1){
-            JOptionPane.showMessageDialog(this, "请选中要删除的数据！");
+            JOptionPane.showMessageDialog(this, "삭제할 데이터를 선택하십시오!");
             return;
         }
         int course_id = Integer.parseInt(courseListTable.getValueAt(row, 0).toString());
         CourseDao courseDao = new CourseDao();
         if(courseDao.delete(course_id)){
-            JOptionPane.showMessageDialog(this, "删除成功！");
+            JOptionPane.showMessageDialog(this, "삭제 성공!");
         }else{
-            JOptionPane.showMessageDialog(this, "删除失败！");
+            JOptionPane.showMessageDialog(this, "삭제 실패!");
         }
         courseDao.closeDao();
         setCourseListTable(new Course());

@@ -226,18 +226,18 @@ public class ManageScoreFrm extends JInternalFrame {
         // TODO Auto-generated method stub
         int row = scoreListTable.getSelectedRow();
         if(row == -1){
-            JOptionPane.showMessageDialog(this, "请先选择一行！");
+            JOptionPane.showMessageDialog(this, "한 줄 먼저 선택해 주세요!");
             return;
         }
-        if(JOptionPane.showConfirmDialog(this, "确定要删除么？") == JOptionPane.OK_OPTION){
+        if(JOptionPane.showConfirmDialog(this, "삭제하시겠습니까?") == JOptionPane.OK_OPTION){
             int scoreId = Integer.parseInt(scoreListTable.getValueAt(row, 0).toString());
             ScoreDao scoreDao = new ScoreDao();
             if(scoreDao.delete(scoreId)){
-                JOptionPane.showMessageDialog(this, "删除成功！");
+                JOptionPane.showMessageDialog(this, "삭제 성공!");
                 editScoreTextField.setText("");
                 initTable();
             }else{
-                JOptionPane.showMessageDialog(this, "删除失败！");
+                JOptionPane.showMessageDialog(this, "삭제 실패!");
             }
             scoreDao.closeDao();
         }
@@ -247,18 +247,18 @@ public class ManageScoreFrm extends JInternalFrame {
         // TODO Auto-generated method stub
         int row = scoreListTable.getSelectedRow();
         if(row == -1){
-            JOptionPane.showMessageDialog(this, "请先选择一行！");
+            JOptionPane.showMessageDialog(this, "한 줄 먼저 선택해 주세요!");
             return;
         }
         int scoreId = Integer.parseInt(scoreListTable.getValueAt(row, 0).toString());
         int score = Integer.parseInt(editScoreTextField.getText().toString());
         ScoreDao scoreDao = new ScoreDao();
         if(scoreDao.update(scoreId, score)){
-            JOptionPane.showMessageDialog(this, "更新成功！");
+            JOptionPane.showMessageDialog(this, "업데이트 성공!");
             editScoreTextField.setText("");
             initTable();
         }else{
-            JOptionPane.showMessageDialog(this, "更新失败！");
+            JOptionPane.showMessageDialog(this, "업데이트 실패!");
         }
         scoreDao.closeDao();
     }
@@ -296,7 +296,7 @@ public class ManageScoreFrm extends JInternalFrame {
         courseList = courseDao.getCourseList(new Course());
         courseDao.closeDao();
         for (Course course : courseList) {
-            if("教师".equals(MainFrm.userType.getName())){
+            if("선생님".equals(MainFrm.userType.getName())){
                 Teacher teacher = (Teacher)MainFrm.userObject;
                 if(course.getTeacher_id() == teacher.getId()){
                     courseComboBox.addItem(course);

@@ -257,17 +257,17 @@ public class ManageStudentFrm extends JInternalFrame {
         // TODO Auto-generated method stub
         int row = studentListTable.getSelectedRow();
         if(row == -1){
-            JOptionPane.showMessageDialog(this, "请选中要修改的数据！");
+            JOptionPane.showMessageDialog(this, "수정할 데이터를 선택하십시오!");
             return;
         }
         String studentName = editStudentNameTextField.getText().toString();
         String studentPassword = editStudentPasswordPasswordField.getText().toString();
         if(StringUtil.isEmpty(studentName)){
-            JOptionPane.showMessageDialog(this, "请填写学生姓名！");
+            JOptionPane.showMessageDialog(this, "학생 성함 작성해주세요!");
             return;
         }
         if(StringUtil.isEmpty(studentPassword)){
-            JOptionPane.showMessageDialog(this, "请填写密码！");
+            JOptionPane.showMessageDialog(this, "비밀번호 입력해주세요!");
             return;
         }
 
@@ -282,9 +282,9 @@ public class ManageStudentFrm extends JInternalFrame {
         if(editStudentSexUnkonwRadioButton.isSelected())student.setSex(editStudentSexUnkonwRadioButton.getText().toString());
         StudentDao studentDao = new StudentDao();
         if(studentDao.update(student)){
-            JOptionPane.showMessageDialog(this, "更新成功！");
+            JOptionPane.showMessageDialog(this, "업데이트 성공!");
         }else{
-            JOptionPane.showMessageDialog(this, "更新失败！");
+            JOptionPane.showMessageDialog(this, "업데이트 실패!");
         }
         studentDao.closeDao();
         setTable(new Student());
@@ -295,17 +295,17 @@ public class ManageStudentFrm extends JInternalFrame {
 
         int row = studentListTable.getSelectedRow();
         if(row == -1){
-            JOptionPane.showMessageDialog(this, "请选中要删除的数据！");
+            JOptionPane.showMessageDialog(this, "삭제할 데이터를 선택하십시오!");
             return;
         }
-        if(JOptionPane.showConfirmDialog(this, "您确定删除么？") != JOptionPane.OK_OPTION){
+        if(JOptionPane.showConfirmDialog(this, "삭제하시겠습니까?") != JOptionPane.OK_OPTION){
             return;
         }
         StudentDao studentDao = new StudentDao();
         if(studentDao.delete(Integer.parseInt(studentListTable.getValueAt(row, 0).toString()))){
-            JOptionPane.showMessageDialog(this, "删除成功！");
+            JOptionPane.showMessageDialog(this, "삭제 성공!");
         }else{
-            JOptionPane.showMessageDialog(this, "删除失败！");
+            JOptionPane.showMessageDialog(this, "삭제 실패!");
         }
         studentDao.closeDao();
         setTable(new Student());
@@ -338,7 +338,7 @@ public class ManageStudentFrm extends JInternalFrame {
     }
 
     private void setTable(Student student){
-        if("学生".equals(MainFrm.userType.getName())){
+        if("학생".equals(MainFrm.userType.getName())){
             Student s = (Student)MainFrm.userObject;
             student.setName(s.getName());
         }
@@ -373,7 +373,7 @@ public class ManageStudentFrm extends JInternalFrame {
         return "";
     }
     private void setAuthority(){
-        if("学生".equals(MainFrm.userType.getName())){
+        if("학생".equals(MainFrm.userType.getName())){
             Student s = (Student)MainFrm.userObject;
             serachStudentNameTextField.setText(s.getName());
             serachStudentNameTextField.setEnabled(false);

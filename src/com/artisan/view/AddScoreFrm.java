@@ -151,11 +151,11 @@ public class AddScoreFrm extends JInternalFrame {
             score = Integer.parseInt(scoreTextField.getText().toString());
         } catch (Exception e) {
             // TODO: handle exception
-            JOptionPane.showMessageDialog(this, "成绩必须输入大于0的整数！");
+            JOptionPane.showMessageDialog(this, "성적은 반드시 0보다 큰 정수를 입력해야 합니다!");
             return;
         }
         if(score <= 0){
-            JOptionPane.showMessageDialog(this, "成绩必须输入大于0的整数！");
+            JOptionPane.showMessageDialog(this, "성적은 반드시 0보다 큰 정수를 입력해야 합니다!");
             return;
         }
         Student student = (Student) studentComboBox.getSelectedItem();
@@ -166,14 +166,14 @@ public class AddScoreFrm extends JInternalFrame {
         scoreObj.setScore(score);
         ScoreDao scoreDao = new ScoreDao();
         if(scoreDao.isAdd(scoreObj)){
-            JOptionPane.showMessageDialog(this, "成绩已经录入，请勿重复录入！");
+            JOptionPane.showMessageDialog(this, "성적은 이미 입력했으니 중복 입력하지 마세요!");
             return;
         }
         if(scoreDao.addScore(scoreObj)){
-            JOptionPane.showMessageDialog(this, "成绩录入成功！");
+            JOptionPane.showMessageDialog(this, "성적 입력 성공!");
             scoreTextField.setText("");
         }else{
-            JOptionPane.showMessageDialog(this, "成绩录入失败！");
+            JOptionPane.showMessageDialog(this, "성적 입력 실패!");
         }
         scoreDao.closeDao();
     }
@@ -192,7 +192,7 @@ public class AddScoreFrm extends JInternalFrame {
         courseList = courseDao.getCourseList(new Course());
         courseDao.closeDao();
         for (Course course : courseList) {
-            if("教师".equals(MainFrm.userType.getName())){
+            if("선생님".equals(MainFrm.userType.getName())){
                 Teacher teacher = (Teacher)MainFrm.userObject;
                 if(course.getTeacher_id() == teacher.getId()){
                     courseComboBox.addItem(course);
