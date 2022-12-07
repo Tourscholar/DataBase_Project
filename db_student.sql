@@ -1,15 +1,9 @@
 /*
-Navicat MySQL Data Transfer
-
 Source Server         : MySQL
-Source Server Version : 50537
 Source Host           : localhost:3306
 Source Database       : db_student
 
 Target Server Type    : MYSQL
-Target Server Version : 50537
-File Encoding         : 65001
-
 Date: 2022-12-02
 */
 
@@ -210,13 +204,13 @@ INSERT INTO `s_teacher` VALUES ('5', '선생님5', '남자', '총장', '40', '5'
 INSERT INTO `s_teacher` VALUES ('6', '선생님6', '여자', 'Linux선생님', '40', '6');
 
 -- ----------------------------
--- View structure for 查看当前所有学生性别和所在班级，并显示该班级简介
+-- View structure for 현재 모든 학생의 성별과 학급을 보고 해당 학급의 프로필을 표시합니다
 -- ----------------------------
 DROP VIEW IF EXISTS `현재 모든 학생의 성별과 학급을 보고 해당 학급의 프로필을 표시합니다`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `현재 모든 학생의 성별과 학급을 보고 해당 학급의 프로필을 표시합니다` AS select `s_student`.`sex` AS `sex`,`s_student`.`name` AS `name`,`s_student`.`id` AS `id`,`s_class`.`info` AS `info` from (`s_student` join `s_class` on((`s_student`.`classId` = `s_class`.`id`))) ;
 
 -- ----------------------------
--- Function structure for 查找该学号学生
+-- Function structure for 해당 학번 학생을 찾다
 -- ----------------------------
 DROP FUNCTION IF EXISTS `해당 학번 학생을 찾다`;
 DELIMITER ;;
@@ -230,7 +224,7 @@ END
 DELIMITER ;
 
 -- ----------------------------
--- Event structure for 每5周执行一次添加新同学的事件，名字叫张三
+-- Event structure for 5주에 한 번씩 새로운 학우를 추가하는 사건, 이름은 장삼
 -- ----------------------------
 DROP EVENT IF EXISTS `5주에 한 번씩 새로운 학우를 추가하는 사건, 이름은 장삼`;
 DELIMITER ;;
