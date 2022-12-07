@@ -49,23 +49,23 @@ public class AddStudentClassFrm extends JInternalFrame {
     public AddStudentClassFrm() {
         setClosable(true);
         setIconifiable(true);
-        setTitle("\u6DFB\u52A0\u73ED\u7EA7\u4FE1\u606F");
+        setTitle("학급 정보 추가");
         setBounds(100, 100, 450, 300);
 
-        JLabel label = new JLabel("\u73ED\u7EA7\u540D\u79F0\uFF1A");
+        JLabel label = new JLabel("학급 이름:");
         label.setIcon(new ImageIcon(AddStudentClassFrm.class.getResource("/images/\u73ED\u7EA7\u540D\u79F0.png")));
         label.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         classNameTextField = new JTextField();
         classNameTextField.setColumns(10);
 
-        JLabel label_1 = new JLabel("\u73ED\u7EA7\u4FE1\u606F\uFF1A");
+        JLabel label_1 = new JLabel("학급 정보:");
         label_1.setIcon(new ImageIcon(AddStudentClassFrm.class.getResource("/images/\u73ED\u7EA7\u4ECB\u7ECD.png")));
         label_1.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         classInfotextArea = new JTextArea();
 
-        JButton submitButton = new JButton("\u63D0\u4EA4");
+        JButton submitButton = new JButton("제출");
         submitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 submitClass(ae);
@@ -74,7 +74,7 @@ public class AddStudentClassFrm extends JInternalFrame {
         submitButton.setIcon(new ImageIcon(AddStudentClassFrm.class.getResource("/images/\u786E\u8BA4.png")));
         submitButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
-        JButton restButton = new JButton("\u91CD\u7F6E");
+        JButton restButton = new JButton("리셋");
         restButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 resetValue(e);

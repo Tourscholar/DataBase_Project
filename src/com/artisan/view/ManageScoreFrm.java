@@ -66,16 +66,16 @@ public class ManageScoreFrm extends JInternalFrame {
     public ManageScoreFrm() {
         setClosable(true);
         setIconifiable(true);
-        setTitle("\u6210\u7EE9\u7BA1\u7406\u754C\u9762");
+        setTitle("성적 관리 페이지");
         setBounds(100, 100, 791, 618);
 
-        JLabel label = new JLabel("\u5B66\u751F\uFF1A");
+        JLabel label = new JLabel("학생:");
         label.setIcon(new ImageIcon(ManageScoreFrm.class.getResource("/images/\u5B66\u751F\u7BA1\u7406.png")));
         label.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         studentComboBox = new JComboBox();
 
-        JLabel label_1 = new JLabel("\u8BFE\u7A0B");
+        JLabel label_1 = new JLabel("커리큘럼");
         label_1.setIcon(new ImageIcon(ManageScoreFrm.class.getResource("/images/\u8BFE\u7A0B.png")));
         label_1.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
@@ -86,7 +86,7 @@ public class ManageScoreFrm extends JInternalFrame {
             }
         });
 
-        JButton searchButton = new JButton("\u67E5\u8BE2");
+        JButton searchButton = new JButton("검색");
         searchButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 Student student = (Student)studentComboBox.getSelectedItem();
@@ -103,7 +103,7 @@ public class ManageScoreFrm extends JInternalFrame {
         JScrollPane scrollPane = new JScrollPane();
 
         JPanel panel = new JPanel();
-        panel.setBorder(new TitledBorder(null, "\u4FEE\u6539\u6210\u7EE9", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        panel.setBorder(new TitledBorder(null, "성적을 수정", TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GroupLayout groupLayout = new GroupLayout(getContentPane());
         groupLayout.setHorizontalGroup(
                 groupLayout.createParallelGroup(Alignment.LEADING)
@@ -144,14 +144,14 @@ public class ManageScoreFrm extends JInternalFrame {
                                 .addContainerGap(49, Short.MAX_VALUE))
         );
 
-        JLabel label_2 = new JLabel("\u6210\u7EE9\uFF1A");
+        JLabel label_2 = new JLabel("성적:");
         label_2.setIcon(new ImageIcon(ManageScoreFrm.class.getResource("/images/\u6210\u7EE9.png")));
         label_2.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editScoreTextField = new JTextField();
         editScoreTextField.setColumns(10);
 
-        JButton confirmEditButton = new JButton("\u786E\u8BA4\u4FEE\u6539");
+        JButton confirmEditButton = new JButton("확인 수정");
         confirmEditButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 editSubmitAct(ae);
@@ -160,7 +160,7 @@ public class ManageScoreFrm extends JInternalFrame {
         confirmEditButton.setIcon(new ImageIcon(ManageScoreFrm.class.getResource("/images/\u786E\u8BA4.png")));
         confirmEditButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
-        JButton deleteButton = new JButton("\u5220\u9664\u6210\u7EE9");
+        JButton deleteButton = new JButton("성적 삭제");
         deleteButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 deleteAct(ae);
@@ -206,7 +206,7 @@ public class ManageScoreFrm extends JInternalFrame {
                 new Object[][] {
                 },
                 new String[] {
-                        "\u6210\u7EE9ID", "\u5B66\u751F\u59D3\u540D", "\u8BFE\u7A0B\u540D\u79F0", "\u6210\u7EE9"
+                        "성적 id", "학생 이름", "과정 이름", "성적"
                 }
         ) {
             boolean[] columnEditables = new boolean[] {

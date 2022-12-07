@@ -57,16 +57,16 @@ public class AddScoreFrm extends JInternalFrame {
     public AddScoreFrm() {
         setClosable(true);
         setIconifiable(true);
-        setTitle("\u6210\u7EE9\u5F55\u5165\u754C\u9762");
+        setTitle("성적 입력 인터페이스");
         setBounds(100, 100, 641, 474);
 
-        JLabel label = new JLabel("\u5B66\u751F\u59D3\u540D\uFF1A");
+        JLabel label = new JLabel("학생 이름:");
         label.setIcon(new ImageIcon(AddScoreFrm.class.getResource("/images/\u5B66\u751F\u7BA1\u7406.png")));
         label.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         studentComboBox = new JComboBox();
 
-        JLabel label_1 = new JLabel("\u8BFE\u7A0B\u4FE1\u606F\uFF1A");
+        JLabel label_1 = new JLabel("과정 정보:");
         label_1.setIcon(new ImageIcon(AddScoreFrm.class.getResource("/images/\u8BFE\u7A0B.png")));
         label_1.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
@@ -82,14 +82,14 @@ public class AddScoreFrm extends JInternalFrame {
             }
         });
 
-        JLabel label_2 = new JLabel("\u6240\u5F97\u6210\u7EE9\uFF1A");
+        JLabel label_2 = new JLabel("결과:");
         label_2.setIcon(new ImageIcon(AddScoreFrm.class.getResource("/images/\u6210\u7EE9.png")));
         label_2.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         scoreTextField = new JTextField();
         scoreTextField.setColumns(10);
 
-        JButton submitButton = new JButton("\u5F55\u5165\u6210\u7EE9");
+        JButton submitButton = new JButton("성적을 입력");
         submitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 submitAct(ae);

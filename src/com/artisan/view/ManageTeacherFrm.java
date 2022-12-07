@@ -64,19 +64,19 @@ public class ManageTeacherFrm extends JInternalFrame {
     public ManageTeacherFrm() {
         setClosable(true);
         setIconifiable(true);
-        setTitle("\u6559\u5E08\u4FE1\u606F\u7BA1\u7406");
+        setTitle("교사정보관리");
         setBounds(100, 100, 805, 691);
 
         JScrollPane scrollPane = new JScrollPane();
 
-        JLabel label = new JLabel("\u6559\u5E08\u59D3\u540D\uFF1A");
+        JLabel label = new JLabel("교사 이름:");
         label.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/\u8001\u5E08.png")));
         label.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         searchTeacherNameTextField = new JTextField();
         searchTeacherNameTextField.setColumns(10);
 
-        JButton searchTeacherButton = new JButton("\u67E5\u8BE2");
+        JButton searchTeacherButton = new JButton("검색");
         searchTeacherButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 searchTeacher(e);
@@ -86,7 +86,7 @@ public class ManageTeacherFrm extends JInternalFrame {
         searchTeacherButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         JPanel panel = new JPanel();
-        panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "\u6559\u5E08\u4FE1\u606F\u4FEE\u6539", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "교사 정보 수정", TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GroupLayout groupLayout = new GroupLayout(getContentPane());
         groupLayout.setHorizontalGroup(
                 groupLayout.createParallelGroup(Alignment.LEADING)
@@ -121,46 +121,46 @@ public class ManageTeacherFrm extends JInternalFrame {
                                 .addContainerGap(56, Short.MAX_VALUE))
         );
 
-        JLabel label_1 = new JLabel("\u6559\u5E08\u59D3\u540D\uFF1A");
+        JLabel label_1 = new JLabel("교사 이름:");
         label_1.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/\u8001\u5E08.png")));
         label_1.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editTeacherNameTextField = new JTextField();
         editTeacherNameTextField.setColumns(10);
 
-        JLabel label_2 = new JLabel("\u6559\u5E08\u6027\u522B\uFF1A");
+        JLabel label_2 = new JLabel("교사 성별:");
         label_2.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/\u6027\u522B.png")));
         label_2.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         ButtonGroup buttonGroup = new ButtonGroup();
-        editTeacherSexManRadioButton = new JRadioButton("\u7537");
+        editTeacherSexManRadioButton = new JRadioButton("남자");
         editTeacherSexManRadioButton.setSelected(true);
 
-        editTeacherSexFemalRadioButton = new JRadioButton("\u5973");
+        editTeacherSexFemalRadioButton = new JRadioButton("여자");
         buttonGroup.add(editTeacherSexManRadioButton);
         buttonGroup.add(editTeacherSexFemalRadioButton);
 
-        JLabel label_3 = new JLabel("\u6559\u5E08\u804C\u79F0\uFF1A");
+        JLabel label_3 = new JLabel("교사 직함:");
         label_3.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/\u804C\u79F0\u8BC4\u5B9A.png")));
         label_3.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editTeacherTitleTextField = new JTextField();
         editTeacherTitleTextField.setColumns(10);
 
-        JLabel label_4 = new JLabel("\u6559\u5E08\u5E74\u9F84\uFF1A");
+        JLabel label_4 = new JLabel("교사 연령:");
         label_4.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/\u5E74\u9F84.png")));
         label_4.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editTeacherAgeTextField = new JTextField();
         editTeacherAgeTextField.setColumns(10);
 
-        JLabel label_5 = new JLabel("\u767B\u5F55\u5BC6\u7801\uFF1A");
+        JLabel label_5 = new JLabel("로그인 비밀번호:");
         label_5.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/\u5BC6\u7801.png")));
         label_5.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editTeacherPasswordField = new JPasswordField();
 
-        JButton editTeacherSubmitButton = new JButton("\u786E\u8BA4\u4FEE\u6539");
+        JButton editTeacherSubmitButton = new JButton("확인 수정");
         editTeacherSubmitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 editTeacherAct(ae);
@@ -169,7 +169,7 @@ public class ManageTeacherFrm extends JInternalFrame {
         editTeacherSubmitButton.setIcon(new ImageIcon(ManageTeacherFrm.class.getResource("/images/\u786E\u8BA4.png")));
         editTeacherSubmitButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
-        deleteTeacherButton = new JButton("\u5220\u9664\u4FE1\u606F");
+        deleteTeacherButton = new JButton("정보 삭제");
         deleteTeacherButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 deleteTeacher(ae);
@@ -253,7 +253,7 @@ public class ManageTeacherFrm extends JInternalFrame {
                 new Object[][] {
                 },
                 new String[] {
-                        "\u6559\u5E08ID", "\u6559\u5E08\u59D3\u540D", "\u6559\u5E08\u6027\u522B", "\u6559\u5E08\u804C\u79F0", "\u6559\u5E08\u5E74\u9F84", "\u767B\u5F55\u5BC6\u7801"
+                        "교사아이디", "교사이름", "교사성별", "교사직명", "교사나이", "로그인비밀번호"
                 }
         ) {
             boolean[] columnEditables = new boolean[] {

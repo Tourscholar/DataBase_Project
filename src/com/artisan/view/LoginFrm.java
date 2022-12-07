@@ -56,32 +56,32 @@ public class LoginFrm extends JFrame {
      * Create the frame.
      */
     public LoginFrm() {
-        setTitle("\u767B\u9646\u754C\u9762");
+        setTitle("로그인 페이지");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 540, 379);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         setLocationRelativeTo(null);
-        JLabel label = new JLabel("\u5B66\u751F\u4FE1\u606F\u7CFB\u7EDF\u767B\u9646\u754C\u9762");
+        JLabel label = new JLabel("학생 정보 시스템 접속 인터페이스");
         label.setIcon(new ImageIcon(LoginFrm.class.getResource("/images/logo.png")));
         label.setFont(new Font("AppleMyungjo", Font.BOLD, 18));
 
-        JLabel label_1 = new JLabel("\u7528\u6237\u540D\uFF1A");
+        JLabel label_1 = new JLabel("사용자 이름:");
         label_1.setIcon(new ImageIcon(LoginFrm.class.getResource("")));
         label_1.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         userNameTextField = new JTextField();
         userNameTextField.setColumns(10);
 
-        JLabel label_2 = new JLabel("\u5BC6   \u7801\uFF1A");
+        JLabel label_2 = new JLabel("비밀 번호:");
         label_2.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
         label_2.setIcon(new ImageIcon(LoginFrm.class.getResource("")));
 
         passwordTextField = new JPasswordField();
         passwordTextField.setColumns(10);
 
-        JLabel label_3 = new JLabel("\u7528\u6237\u7C7B\u578B\uFF1A");
+        JLabel label_3 = new JLabel("사용자 유형:");
         label_3.setIcon(new ImageIcon(LoginFrm.class.getResource("")));
         label_3.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 

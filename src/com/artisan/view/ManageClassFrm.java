@@ -60,19 +60,19 @@ public class ManageClassFrm extends JInternalFrame {
     public ManageClassFrm() {
         setClosable(true);
         setIconifiable(true);
-        setTitle("\u73ED\u7EA7\u4FE1\u606F\u7BA1\u7406");
+        setTitle("학급 정보 관리");
         setBounds(100, 100, 773, 562);
 
         JScrollPane scrollPane = new JScrollPane();
 
-        JLabel label = new JLabel("\u73ED\u7EA7\u540D\u79F0\uFF1A");
+        JLabel label = new JLabel("학급 이름:");
         label.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/\u73ED\u7EA7\u540D\u79F0.png")));
         label.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         searchClassNameTextField = new JTextField();
         searchClassNameTextField.setColumns(10);
 
-        JButton searchButton = new JButton("\u67E5\u8BE2");
+        JButton searchButton = new JButton("검색");
         searchButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 StudentClass sc = new StudentClass();
@@ -83,20 +83,20 @@ public class ManageClassFrm extends JInternalFrame {
         searchButton.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/\u641C\u7D22.png")));
         searchButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
-        JLabel label_1 = new JLabel("\u73ED\u7EA7\u540D\u79F0\uFF1A");
+        JLabel label_1 = new JLabel("학급 이름:");
         label_1.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/\u73ED\u7EA7\u540D\u79F0.png")));
         label_1.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editClassNameTextField = new JTextField();
         editClassNameTextField.setColumns(10);
 
-        JLabel label_2 = new JLabel("\u73ED\u7EA7\u4FE1\u606F\uFF1A");
+        JLabel label_2 = new JLabel("학급 정보:");
         label_2.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/\u73ED\u7EA7\u4ECB\u7ECD.png")));
         label_2.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editClassInfoTextArea = new JTextArea();
 
-        JButton submitEditButton = new JButton("\u786E\u8BA4\u4FEE\u6539");
+        JButton submitEditButton = new JButton("확인 수정");
         submitEditButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 submitEditAct(ae);
@@ -105,7 +105,7 @@ public class ManageClassFrm extends JInternalFrame {
         submitEditButton.setIcon(new ImageIcon(ManageClassFrm.class.getResource("/images/\u786E\u8BA4.png")));
         submitEditButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
-        JButton submitDeleteButton = new JButton("\u5220\u9664");
+        JButton submitDeleteButton = new JButton("삭제");
         submitDeleteButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 deleteClassAct(ae);
@@ -190,7 +190,7 @@ public class ManageClassFrm extends JInternalFrame {
                 new Object[][] {
                 },
                 new String[] {
-                        "\u73ED\u7EA7\u7F16\u53F7","\u73ED\u7EA7\u540D\u79F0" , "\u73ED\u7EA7\u4FE1\u606F\u4ECB\u7ECD"
+                        "학급번호", "학급명", "학급정보 안내"
                 }
         ) {
             boolean[] columnEditables = new boolean[] {

@@ -60,18 +60,18 @@ public class MainFrm extends JFrame {
     public MainFrm(UserType userType,Object userObject) {
         this.userType = userType;
         this.userObject = userObject;
-        setTitle("\u5B66\u751F\u4FE1\u606F\u7CFB\u7EDF\u4E3B\u754C\u9762");
+        setTitle("학생 정보 시스템 메인 인터페이스");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 936, 774);
 
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
-        JMenu menu = new JMenu("\u7CFB\u7EDF\u8BBE\u7F6E");
+        JMenu menu = new JMenu("시스템 설정");
         menu.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menuBar.add(menu);
 
-        JMenuItem menuItem = new JMenuItem("\u4FEE\u6539\u5BC6\u7801");
+        JMenuItem menuItem = new JMenuItem("비밀번호 변경");
         menuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 editPassword(ae);
@@ -80,7 +80,7 @@ public class MainFrm extends JFrame {
         menuItem.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menu.add(menuItem);
 
-        JMenuItem menuItem_1 = new JMenuItem("\u9000\u51FA\u7CFB\u7EDF");
+        JMenuItem menuItem_1 = new JMenuItem("시스템 종료");
         menuItem_1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(JOptionPane.showConfirmDialog(MainFrm.this, "确定退出么？") == JOptionPane.OK_OPTION){
@@ -91,11 +91,11 @@ public class MainFrm extends JFrame {
         menuItem_1.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menu.add(menuItem_1);
 
-        JMenu menu_1 = new JMenu("\u5B66\u751F\u7BA1\u7406");
+        JMenu menu_1 = new JMenu("학생 관리");
         menu_1.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menuBar.add(menu_1);
 
-        addStudentMenuItem = new JMenuItem("\u5B66\u751F\u6DFB\u52A0");
+        addStudentMenuItem = new JMenuItem("학생 추가");
         addStudentMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 AddStudentFrm addStudentFrm = new AddStudentFrm();
@@ -106,7 +106,7 @@ public class MainFrm extends JFrame {
         addStudentMenuItem.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menu_1.add(addStudentMenuItem);
 
-        JMenuItem menuItem_3 = new JMenuItem("\u5B66\u751F\u5217\u8868");
+        JMenuItem menuItem_3 = new JMenuItem("학생 목록");
         menuItem_3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 ManageStudentFrm studentManageFrm = new ManageStudentFrm();
@@ -117,11 +117,11 @@ public class MainFrm extends JFrame {
         menuItem_3.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menu_1.add(menuItem_3);
 
-        manageClassMenu = new JMenu("\u73ED\u7EA7\u7BA1\u7406");
+        manageClassMenu = new JMenu("학급 관리");
         manageClassMenu.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menuBar.add(manageClassMenu);
 
-        JMenuItem menuItem_4 = new JMenuItem("\u73ED\u7EA7\u6DFB\u52A0");
+        JMenuItem menuItem_4 = new JMenuItem("학급 추가");
         menuItem_4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 addStudentClass(ae);
@@ -130,7 +130,7 @@ public class MainFrm extends JFrame {
         menuItem_4.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         manageClassMenu.add(menuItem_4);
 
-        JMenuItem menuItem_5 = new JMenuItem("\u73ED\u7EA7\u7BA1\u7406");
+        JMenuItem menuItem_5 = new JMenuItem("학급 관리");
         menuItem_5.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 ManageClassFrm classManageFrm = new ManageClassFrm();
@@ -141,11 +141,11 @@ public class MainFrm extends JFrame {
         menuItem_5.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         manageClassMenu.add(menuItem_5);
 
-        manageTeacherMenu = new JMenu("\u6559\u5E08\u7BA1\u7406");
+        manageTeacherMenu = new JMenu("교사 관리");
         manageTeacherMenu.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menuBar.add(manageTeacherMenu);
 
-        addTeacherMenuItem = new JMenuItem("\u6DFB\u52A0\u6559\u5E08");
+        addTeacherMenuItem = new JMenuItem("교사 추가");
         addTeacherMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 AddTeacherFrm addTeacherFrm = new AddTeacherFrm();
@@ -156,7 +156,7 @@ public class MainFrm extends JFrame {
         addTeacherMenuItem.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         manageTeacherMenu.add(addTeacherMenuItem);
 
-        JMenuItem menuItem_8 = new JMenuItem("\u6559\u5E08\u5217\u8868");
+        JMenuItem menuItem_8 = new JMenuItem("교사 목록");
         menuItem_8.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 ManageTeacherFrm manageTeacherFrm = new ManageTeacherFrm();
@@ -167,11 +167,11 @@ public class MainFrm extends JFrame {
         menuItem_8.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         manageTeacherMenu.add(menuItem_8);
 
-        courseMenu = new JMenu("\u8BFE\u7A0B\u7BA1\u7406");
+        courseMenu = new JMenu("커리큘럼 관리");
         courseMenu.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menuBar.add(courseMenu);
 
-        JMenuItem addCourseMenuItem = new JMenuItem("\u6DFB\u52A0\u8BFE\u7A0B");
+        JMenuItem addCourseMenuItem = new JMenuItem("커리큘럼 추가");
         addCourseMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 AddCourseFrm addCourseFrm = new AddCourseFrm();
@@ -182,7 +182,7 @@ public class MainFrm extends JFrame {
         addCourseMenuItem.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         courseMenu.add(addCourseMenuItem);
 
-        JMenuItem courseListMenuItem = new JMenuItem("\u8BFE\u7A0B\u5217\u8868");
+        JMenuItem courseListMenuItem = new JMenuItem("커리큘럼");
         courseListMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 ManageCourseFrm manageCourseFrm = new ManageCourseFrm();
@@ -193,11 +193,11 @@ public class MainFrm extends JFrame {
         courseListMenuItem.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         courseMenu.add(courseListMenuItem);
 
-        JMenu menu_4 = new JMenu("\u9009\u8BFE\u7BA1\u7406");
+        JMenu menu_4 = new JMenu("수강신청관리");
         menu_4.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menuBar.add(menu_4);
 
-        JMenuItem menuItem_2 = new JMenuItem("\u9009\u8BFE\u7BA1\u7406");
+        JMenuItem menuItem_2 = new JMenuItem("수강신청관리");
         menuItem_2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 ManageSelectedCourseFrm manageSelectedCourseFrm = new ManageSelectedCourseFrm();
@@ -208,11 +208,11 @@ public class MainFrm extends JFrame {
         menuItem_2.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menu_4.add(menuItem_2);
 
-        JMenu menu_2 = new JMenu("\u7B7E\u5230\u8003\u52E4");
+        JMenu menu_2 = new JMenu("출석 체크");
         menu_2.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menuBar.add(menu_2);
 
-        studentAttdentanceMenuItem = new JMenuItem("\u5B66\u751F\u7B7E\u5230");
+        studentAttdentanceMenuItem = new JMenuItem("학생 출석체크");
         studentAttdentanceMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 AttendanceStudentFrm attendanceStudentFrm = new AttendanceStudentFrm();
@@ -224,7 +224,7 @@ public class MainFrm extends JFrame {
         studentAttdentanceMenuItem.setEnabled(false);
         menu_2.add(studentAttdentanceMenuItem);
 
-        manageAttendanceMenuItem = new JMenuItem("\u7B7E\u5230\u7BA1\u7406");
+        manageAttendanceMenuItem = new JMenuItem("출석 관리");
         manageAttendanceMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 ManageAttendanceFrm manageAttendanceFrm = new ManageAttendanceFrm();
@@ -235,7 +235,7 @@ public class MainFrm extends JFrame {
         manageAttendanceMenuItem.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menu_2.add(manageAttendanceMenuItem);
 
-        statsAttendanceMenuItem = new JMenuItem("\u7B7E\u5230\u7EDF\u8BA1");
+        statsAttendanceMenuItem = new JMenuItem("출석체크");
         statsAttendanceMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 StatsAttendanceFrm statsAttendanceFrm = new StatsAttendanceFrm();
@@ -246,11 +246,11 @@ public class MainFrm extends JFrame {
         statsAttendanceMenuItem.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menu_2.add(statsAttendanceMenuItem);
 
-        JMenu menu_5 = new JMenu("\u6210\u7EE9\u7BA1\u7406");
+        JMenu menu_5 = new JMenu("성적관리");
         menu_5.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menuBar.add(menu_5);
 
-        addScoreMenuItem = new JMenuItem("\u5F55\u5165\u6210\u7EE9");
+        addScoreMenuItem = new JMenuItem("성적을 입력");
         addScoreMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 AddScoreFrm addScoreFrm = new AddScoreFrm();
@@ -261,7 +261,7 @@ public class MainFrm extends JFrame {
         addScoreMenuItem.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menu_5.add(addScoreMenuItem);
 
-        viewScoreMenuItem = new JMenuItem("\u6210\u7EE9\u67E5\u770B");
+        viewScoreMenuItem = new JMenuItem("성적 보기");
         viewScoreMenuItem.setEnabled(false);
         viewScoreMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
@@ -273,7 +273,7 @@ public class MainFrm extends JFrame {
         viewScoreMenuItem.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menu_5.add(viewScoreMenuItem);
 
-        manageScoreMenuItem = new JMenuItem("\u6210\u7EE9\u7BA1\u7406");
+        manageScoreMenuItem = new JMenuItem("성적관리");
         manageScoreMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 ManageScoreFrm manageScoreFrm = new ManageScoreFrm();
@@ -284,7 +284,7 @@ public class MainFrm extends JFrame {
         manageScoreMenuItem.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menu_5.add(manageScoreMenuItem);
 
-        scoreStatsMenuItem = new JMenuItem("\u6210\u7EE9\u7EDF\u8BA1");
+        scoreStatsMenuItem = new JMenuItem("성적통계");
         scoreStatsMenuItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 StatsScoreFrm statsScoreFrm = new StatsScoreFrm();
@@ -295,11 +295,11 @@ public class MainFrm extends JFrame {
         scoreStatsMenuItem.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menu_5.add(scoreStatsMenuItem);
 
-        JMenu menu_3 = new JMenu("\u5E2E\u52A9");
+        JMenu menu_3 = new JMenu("도움");
         menu_3.setIcon(new ImageIcon(MainFrm.class.getResource("")));
         menuBar.add(menu_3);
 
-        JMenuItem menuItem_6 = new JMenuItem("\u5173\u4E8E\u6211\u4EEC");
+        JMenuItem menuItem_6 = new JMenuItem("우리에 대해서");
         menuItem_6.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
             }

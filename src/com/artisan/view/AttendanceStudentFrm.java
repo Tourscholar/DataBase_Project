@@ -63,16 +63,16 @@ public class AttendanceStudentFrm extends JInternalFrame {
     public AttendanceStudentFrm() {
         setClosable(true);
         setIconifiable(true);
-        setTitle("\u5B66\u751F\u7B7E\u5230\u9762\u677F");
+        setTitle("학생 출석체크 패널");
         setBounds(100, 100, 650, 515);
 
-        JLabel label = new JLabel("\u8BFE\u7A0B\uFF1A");
+        JLabel label = new JLabel("커리큘럼:");
         label.setIcon(new ImageIcon(AttendanceStudentFrm.class.getResource("/images/\u8BFE\u7A0B.png")));
         label.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         addSelectedCourseComboBox = new JComboBox();
 
-        JButton addAttendanceButton = new JButton("\u786E\u8BA4\u7B7E\u5230");
+        JButton addAttendanceButton = new JButton("출석체크");
         addAttendanceButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 addAttendanceAct(ae);
@@ -82,7 +82,7 @@ public class AttendanceStudentFrm extends JInternalFrame {
         addAttendanceButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         JPanel panel = new JPanel();
-        panel.setBorder(new TitledBorder(null, "\u5DF2\u7B7E\u5230\u5217\u8868", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        panel.setBorder(new TitledBorder(null, "체크인이 완료된 목록", TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GroupLayout groupLayout = new GroupLayout(getContentPane());
         groupLayout.setHorizontalGroup(
                 groupLayout.createParallelGroup(Alignment.LEADING)
@@ -112,20 +112,20 @@ public class AttendanceStudentFrm extends JInternalFrame {
                                 .addContainerGap(37, Short.MAX_VALUE))
         );
 
-        JLabel label_1 = new JLabel("\u8BFE\u7A0B\uFF1A");
+        JLabel label_1 = new JLabel("커리큘럼:");
         label_1.setIcon(new ImageIcon(AttendanceStudentFrm.class.getResource("/images/\u8BFE\u7A0B.png")));
         label_1.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         searchSelectedComboBox = new JComboBox();
 
-        JLabel label_2 = new JLabel("\u65E5\u671F\uFF1A");
+        JLabel label_2 = new JLabel("날짜:");
         label_2.setIcon(new ImageIcon(AttendanceStudentFrm.class.getResource("/images/\u65E5\u671F.png")));
         label_2.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         searchAttendanceDateTextField = new JTextField();
         searchAttendanceDateTextField.setColumns(10);
 
-        JButton searchAttendanceButton = new JButton("\u67E5\u8BE2");
+        JButton searchAttendanceButton = new JButton("검색");
         searchAttendanceButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 searchAct(ae);
@@ -174,7 +174,7 @@ public class AttendanceStudentFrm extends JInternalFrame {
                 new Object[][] {
                 },
                 new String[] {
-                        "\u7B7E\u5230ID", "\u5B66\u751F\u59D3\u540D", "\u8BFE\u7A0B\u540D\u79F0", "\u7B7E\u5230\u65E5\u671F"
+                        "출석체크 id", "학생 이름", "과정 이름", "출석 날짜"
                 }
         ) {
             boolean[] columnEditables = new boolean[] {

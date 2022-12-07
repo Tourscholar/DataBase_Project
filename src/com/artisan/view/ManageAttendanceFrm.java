@@ -64,10 +64,10 @@ public class ManageAttendanceFrm extends JInternalFrame {
     public ManageAttendanceFrm() {
         setClosable(true);
         setIconifiable(true);
-        setTitle("\u7B7E\u5230\u8003\u52E4\u7BA1\u7406");
+        setTitle("출석 관리");
         setBounds(100, 100, 784, 654);
 
-        JLabel label = new JLabel("\u5B66\u751F\uFF1A");
+        JLabel label = new JLabel("학생:");
         label.setIcon(new ImageIcon(ManageAttendanceFrm.class.getResource("/images/\u5B66\u751F\u7BA1\u7406.png")));
         label.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
@@ -78,7 +78,7 @@ public class ManageAttendanceFrm extends JInternalFrame {
             }
         });
 
-        JLabel label_1 = new JLabel("\u8BFE\u7A0B\uFF1A");
+        JLabel label_1 = new JLabel("커리큘럼:");
         label_1.setIcon(new ImageIcon(ManageAttendanceFrm.class.getResource("/images/\u8BFE\u7A0B.png")));
         label_1.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
@@ -89,7 +89,7 @@ public class ManageAttendanceFrm extends JInternalFrame {
             }
         });
 
-        JButton attendanceAddButton = new JButton("\u786E\u8BA4\u7B7E\u5230");
+        JButton attendanceAddButton = new JButton("출석체크");
         attendanceAddButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 addAttendanceAct(ae);
@@ -99,7 +99,7 @@ public class ManageAttendanceFrm extends JInternalFrame {
         attendanceAddButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         JPanel panel = new JPanel();
-        panel.setBorder(new TitledBorder(null, "\u5DF2\u7B7E\u5230\u5217\u8868", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        panel.setBorder(new TitledBorder(null, "체크인이 완료된 목록", TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GroupLayout groupLayout = new GroupLayout(getContentPane());
         groupLayout.setHorizontalGroup(
                 groupLayout.createParallelGroup(Alignment.LEADING)
@@ -136,7 +136,7 @@ public class ManageAttendanceFrm extends JInternalFrame {
 
         JScrollPane scrollPane = new JScrollPane();
 
-        JButton cancelButton = new JButton("\u6DFB\u52A0\u7F3A\u5E2D");
+        JButton cancelButton = new JButton("결석 추가");
         cancelButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 cancelAttendanceAct(ae);
@@ -169,7 +169,7 @@ public class ManageAttendanceFrm extends JInternalFrame {
                 new Object[][] {
                 },
                 new String[] {
-                        "\u7B7E\u5230ID", "\u5B66\u751F\u59D3\u540D", "\u8BFE\u7A0B\u540D\u79F0", "\u7B7E\u5230\u65F6\u95F4"
+                        "출석체크 id", "학생명", "과정명", "출석시간"
                 }
         ) {
             boolean[] columnEditables = new boolean[] {

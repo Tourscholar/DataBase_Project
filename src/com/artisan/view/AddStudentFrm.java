@@ -57,46 +57,46 @@ public class AddStudentFrm extends JInternalFrame {
     public AddStudentFrm() {
         setClosable(true);
         setIconifiable(true);
-        setTitle("\u6DFB\u52A0\u5B66\u751F");
+        setTitle("학생 추가");
         setBounds(100, 100, 450, 300);
 
-        JLabel label = new JLabel("\u5B66\u751F\u59D3\u540D\uFF1A");
+        JLabel label = new JLabel("학생 이름:");
         label.setIcon(new ImageIcon(AddStudentFrm.class.getResource("/images/\u5B66\u751F\u7BA1\u7406.png")));
         label.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         studentNameTextField = new JTextField();
         studentNameTextField.setColumns(10);
 
-        JLabel label_1 = new JLabel("\u6240\u5C5E\u73ED\u7EA7\uFF1A");
+        JLabel label_1 = new JLabel("소속 학급:");
         label_1.setIcon(new ImageIcon(AddStudentFrm.class.getResource("/images/\u73ED\u7EA7\u540D\u79F0.png")));
         label_1.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         studentClassComboBox = new JComboBox();
         studentClassComboBox.setModel(new DefaultComboBoxModel(new String[] {}));
 
-        JLabel label_2 = new JLabel("\u767B\u5F55\u5BC6\u7801\uFF1A");
+        JLabel label_2 = new JLabel("로그인 비밀번호:");
         label_2.setIcon(new ImageIcon(AddStudentFrm.class.getResource("/images/password.png")));
         label_2.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         studentPasswordField = new JPasswordField();
 
-        JLabel label_3 = new JLabel("\u5B66\u751F\u6027\u522B\uFF1A");
+        JLabel label_3 = new JLabel("학생 성별:");
         label_3.setIcon(new ImageIcon(AddStudentFrm.class.getResource("/images/\u6027\u522B.png")));
         label_3.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         studentSexManRadioButton = new JRadioButton("\u7537");
         studentSexManRadioButton.setSelected(true);
 
-        studentSexFemalRadioButton = new JRadioButton("\u5973");
+        studentSexFemalRadioButton = new JRadioButton("여자");
 
-        studentSexUnkonwRadioButton = new JRadioButton("\u4FDD\u5BC6");
+        studentSexUnkonwRadioButton = new JRadioButton("비밀을 지키다.");
 
         sexButtonGroup = new ButtonGroup();
         sexButtonGroup.add(studentSexManRadioButton);
         sexButtonGroup.add(studentSexFemalRadioButton);
         sexButtonGroup.add(studentSexUnkonwRadioButton);
 
-        JButton submitButton = new JButton("\u786E\u8BA4");
+        JButton submitButton = new JButton("확인");
         submitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 studentAddAct(ae);
@@ -105,7 +105,7 @@ public class AddStudentFrm extends JInternalFrame {
         submitButton.setIcon(new ImageIcon(AddStudentFrm.class.getResource("/images/\u786E\u8BA4.png")));
         submitButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
-        JButton resetButton = new JButton("\u91CD\u7F6E");
+        JButton resetButton = new JButton("리셋");
         resetButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 resetValue(ae);

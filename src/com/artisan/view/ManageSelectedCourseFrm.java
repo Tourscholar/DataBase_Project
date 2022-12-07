@@ -64,10 +64,10 @@ public class ManageSelectedCourseFrm extends JInternalFrame {
     public ManageSelectedCourseFrm() {
         setClosable(true);
         setIconifiable(true);
-        setTitle("\u9009\u8BFE\u7BA1\u7406");
+        setTitle("수강신청관리");
         setBounds(100, 100, 669, 562);
 
-        JLabel label = new JLabel("\u5B66\u751F\uFF1A");
+        JLabel label = new JLabel("학생:");
         label.setIcon(new ImageIcon(ManageSelectedCourseFrm.class.getResource("/images/\u5B66\u751F\u7BA1\u7406.png")));
         label.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
@@ -78,13 +78,13 @@ public class ManageSelectedCourseFrm extends JInternalFrame {
             }
         });
 
-        JLabel label_1 = new JLabel("\u8BFE\u7A0B\uFF1A");
+        JLabel label_1 = new JLabel("커리큘럼");
         label_1.setIcon(new ImageIcon(ManageSelectedCourseFrm.class.getResource("/images/\u65B0\u4EBA\u8BFE\u7A0B.png")));
         label_1.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         searchCourseComboBox = new JComboBox();
 
-        JButton confirmSelectedButton = new JButton("\u786E\u8BA4\u9009\u8BFE");
+        JButton confirmSelectedButton = new JButton("수강 신청을 확인");
         confirmSelectedButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 confirmSelectedCourse(ae);
@@ -96,7 +96,7 @@ public class ManageSelectedCourseFrm extends JInternalFrame {
         JScrollPane scrollPane = new JScrollPane();
 
         JPanel panel = new JPanel();
-        panel.setBorder(new TitledBorder(null, "\u4FEE\u6539\u9009\u8BFE", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        panel.setBorder(new TitledBorder(null, "수강신청을 수정", TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GroupLayout groupLayout = new GroupLayout(getContentPane());
         groupLayout.setHorizontalGroup(
                 groupLayout.createParallelGroup(Alignment.TRAILING)
@@ -158,7 +158,7 @@ public class ManageSelectedCourseFrm extends JInternalFrame {
                 new Object[][] {
                 },
                 new String[] {
-                        "\u9009\u8BFE\u7F16\u53F7", "\u5B66\u751F\u59D3\u540D", "\u8BFE\u7A0B\u540D\u79F0"
+                        "수강신청번호", "학생명", "과정명"
                 }
         ) {
             boolean[] columnEditables = new boolean[] {
@@ -170,19 +170,19 @@ public class ManageSelectedCourseFrm extends JInternalFrame {
         });
         scrollPane.setViewportView(selectedCourseListTable);
 
-        JLabel label_2 = new JLabel("\u5B66\u751F\uFF1A");
+        JLabel label_2 = new JLabel("학생:");
         label_2.setIcon(new ImageIcon(ManageSelectedCourseFrm.class.getResource("/images/\u5B66\u751F\u7BA1\u7406.png")));
         label_2.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editSelectedStudentComboBox = new JComboBox();
 
-        JLabel label_3 = new JLabel("\u8BFE\u7A0B\uFF1A");
+        JLabel label_3 = new JLabel("커리큘럼:");
         label_3.setIcon(new ImageIcon(ManageSelectedCourseFrm.class.getResource("/images/\u65B0\u4EBA\u8BFE\u7A0B.png")));
         label_3.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editSelectedCourseComboBox = new JComboBox();
 
-        JButton confirmEditButton = new JButton("\u786E\u8BA4\u4FEE\u6539");
+        JButton confirmEditButton = new JButton("확인 수정");
         confirmEditButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 editSelectCourseAct(ae);
@@ -191,7 +191,7 @@ public class ManageSelectedCourseFrm extends JInternalFrame {
         confirmEditButton.setIcon(new ImageIcon(ManageSelectedCourseFrm.class.getResource("/images/\u786E\u8BA4.png")));
         confirmEditButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
-        JButton deleteCourseButton = new JButton("\u9000\u9009\u8BFE\u7A0B");
+        JButton deleteCourseButton = new JButton("퇴선 과정");
         deleteCourseButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 deleteSelectedCourse(ae);
@@ -265,7 +265,7 @@ public class ManageSelectedCourseFrm extends JInternalFrame {
                 JOptionPane.showMessageDialog(this, "탈퇴 성공, 수업 정보 업데이트 실패!");
             }
         }else{
-            JOptionPane.showMessageDialog(this, "退课失败！");
+            JOptionPane.showMessageDialog(this, "퇴강 실패!");
         }
         scDao.closeDao();
         courseDao.closeDao();

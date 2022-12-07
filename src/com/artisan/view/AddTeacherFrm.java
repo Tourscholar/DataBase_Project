@@ -54,45 +54,45 @@ public class AddTeacherFrm extends JInternalFrame {
     public AddTeacherFrm() {
         setClosable(true);
         setIconifiable(true);
-        setTitle("\u6DFB\u52A0\u6559\u5E08");
+        setTitle("교사추가");
         setBounds(100, 100, 450, 371);
 
-        JLabel label = new JLabel("\u6559\u5E08\u59D3\u540D\uFF1A");
+        JLabel label = new JLabel("교사 이름:");
         label.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
         label.setIcon(new ImageIcon(AddTeacherFrm.class.getResource("/images/\u8001\u5E08.png")));
 
         teacherNameTextField = new JTextField();
         teacherNameTextField.setColumns(10);
 
-        JLabel label_1 = new JLabel("\u6559\u5E08\u6027\u522B\uFF1A");
+        JLabel label_1 = new JLabel("교사 성별:");
         label_1.setIcon(new ImageIcon(AddTeacherFrm.class.getResource("/images/\u6027\u522B.png")));
         label_1.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         ButtonGroup buttonGroup = new ButtonGroup();
-        teacherSexManRadioButton = new JRadioButton("\u7537");
+        teacherSexManRadioButton = new JRadioButton("남자");
         teacherSexManRadioButton.setSelected(true);
         teacherSexManRadioButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
-        teacherSexFemalRadioButton = new JRadioButton("\u5973");
+        teacherSexFemalRadioButton = new JRadioButton("여자");
         teacherSexFemalRadioButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
         buttonGroup.add(teacherSexManRadioButton);
         buttonGroup.add(teacherSexFemalRadioButton);
 
-        JLabel label_2 = new JLabel("\u6559\u5E08\u804C\u79F0\uFF1A");
+        JLabel label_2 = new JLabel("교사 직함:");
         label_2.setIcon(new ImageIcon(AddTeacherFrm.class.getResource("/images/\u804C\u79F0\u8BC4\u5B9A.png")));
         label_2.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         teacherTitleTextField = new JTextField();
         teacherTitleTextField.setColumns(10);
 
-        JLabel label_3 = new JLabel("\u6559\u5E08\u5E74\u9F84\uFF1A");
+        JLabel label_3 = new JLabel("교사 연령:");
         label_3.setIcon(new ImageIcon(AddTeacherFrm.class.getResource("/images/\u5E74\u9F84.png")));
         label_3.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         teacherAgeTextField = new JTextField();
         teacherAgeTextField.setColumns(10);
 
-        JButton submitButton = new JButton("\u786E\u8BA4\u6DFB\u52A0");
+        JButton submitButton = new JButton("추가 확인");
         submitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 addTeacherAct(ae);
@@ -101,7 +101,7 @@ public class AddTeacherFrm extends JInternalFrame {
         submitButton.setIcon(new ImageIcon(AddTeacherFrm.class.getResource("/images/\u786E\u8BA4.png")));
         submitButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
-        JButton resetButton = new JButton("\u91CD\u7F6E\u8868\u5355");
+        JButton resetButton = new JButton("양식 재설정");
         resetButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 resetValue(ae);
@@ -110,7 +110,7 @@ public class AddTeacherFrm extends JInternalFrame {
         resetButton.setIcon(new ImageIcon(AddTeacherFrm.class.getResource("/images/\u91CD\u7F6E.png")));
         resetButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
-        JLabel label_4 = new JLabel("\u767B\u5F55\u5BC6\u7801\uFF1A");
+        JLabel label_4 = new JLabel("로그인 비밀번호:");
         label_4.setIcon(new ImageIcon(AddTeacherFrm.class.getResource("/images/\u5BC6\u7801.png")));
         label_4.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 

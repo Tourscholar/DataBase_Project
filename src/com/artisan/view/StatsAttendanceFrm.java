@@ -78,10 +78,10 @@ public class StatsAttendanceFrm extends JInternalFrame {
     public StatsAttendanceFrm() {
         setClosable(true);
         setIconifiable(true);
-        setTitle("\u7B7E\u5230\u4FE1\u606F\u7EDF\u8BA1\u60C5\u51B5");
+        setTitle("출석체크 정보");
         setBounds(100, 100, 701, 696);
 
-        JLabel label = new JLabel("\u8BFE\u7A0B\uFF1A");
+        JLabel label = new JLabel("커리큘럼:");
         label.setIcon(new ImageIcon(StatsAttendanceFrm.class.getResource("/images/\u8BFE\u7A0B.png")));
         label.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
@@ -92,14 +92,14 @@ public class StatsAttendanceFrm extends JInternalFrame {
             }
         });
 
-        JLabel label_1 = new JLabel("\u65E5\u671F\uFF1A");
+        JLabel label_1 = new JLabel("날짜:");
         label_1.setIcon(new ImageIcon(StatsAttendanceFrm.class.getResource("/images/\u65E5\u671F.png")));
         label_1.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         dateTextField = new JTextField();
         dateTextField.setColumns(10);
 
-        JButton searchButton = new JButton("\u67E5\u8BE2");
+        JButton searchButton = new JButton("검색");
         searchButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 searchAttendanceAct(ae);
@@ -109,10 +109,10 @@ public class StatsAttendanceFrm extends JInternalFrame {
         searchButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         statsListPanel = new JPanel();
-        statsListPanel.setBorder(new TitledBorder(null, "\u7B7E\u5230\u4FE1\u606F\u7EDF\u8BA1\u60C5\u51B5", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        statsListPanel.setBorder(new TitledBorder(null, "출석체크 정보", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 
         JPanel panel_1 = new JPanel();
-        panel_1.setBorder(new TitledBorder(null, "\u5207\u6362\u663E\u793A\u65B9\u5F0F", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        panel_1.setBorder(new TitledBorder(null, "표시 방식 바꾸기", TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GroupLayout groupLayout = new GroupLayout(getContentPane());
         groupLayout.setHorizontalGroup(
                 groupLayout.createParallelGroup(Alignment.LEADING)
@@ -150,7 +150,7 @@ public class StatsAttendanceFrm extends JInternalFrame {
                                 .addContainerGap())
         );
 
-        JButton button = new JButton("\u5217\u8868\u663E\u793A");
+        JButton button = new JButton("목록 표시");
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 //列表显示
@@ -161,7 +161,7 @@ public class StatsAttendanceFrm extends JInternalFrame {
         });
         button.setIcon(new ImageIcon(StatsAttendanceFrm.class.getResource("/images/\u5217\u8868.png")));
 
-        JButton button_1 = new JButton("\u67F1\u72B6\u56FE\u663E\u793A");
+        JButton button_1 = new JButton("막대그래프 표시");
         button_1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 String dateString = dateTextField.getText().toString();
@@ -177,7 +177,7 @@ public class StatsAttendanceFrm extends JInternalFrame {
         });
         button_1.setIcon(new ImageIcon(StatsAttendanceFrm.class.getResource("/images/\u67F1\u72B6\u56FE.png")));
 
-        JButton button_2 = new JButton("\u997C\u72B6\u56FE\u663E\u793A");
+        JButton button_2 = new JButton("원형도 표시");
         button_2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 //饼状图显示

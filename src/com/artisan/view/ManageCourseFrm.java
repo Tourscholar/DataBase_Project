@@ -63,24 +63,24 @@ public class ManageCourseFrm extends JInternalFrame {
      * Create the frame.
      */
     public ManageCourseFrm() {
-        setTitle("\u8BFE\u7A0B\u4FE1\u606F\u7BA1\u7406");
+        setTitle("커리큘럼 정보 관리");
         setBounds(100, 100, 819, 704);
         setClosable(true);
         setIconifiable(true);
-        JLabel label = new JLabel("\u8BFE\u7A0B\u540D\u79F0\uFF1A");
+        JLabel label = new JLabel("과정 이름:");
         label.setIcon(new ImageIcon(ManageCourseFrm.class.getResource("/images/\u8BFE\u7A0B.png")));
         label.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         searchCourseNameTextField = new JTextField();
         searchCourseNameTextField.setColumns(10);
 
-        JLabel label_1 = new JLabel("\u6388\u8BFE\u8001\u5E08\uFF1A");
+        JLabel label_1 = new JLabel("수업 선생님:");
         label_1.setIcon(new ImageIcon(ManageCourseFrm.class.getResource("/images/\u8001\u5E08.png")));
         label_1.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         searchTeacherComboBox = new JComboBox();
 
-        JButton searchButton = new JButton("\u67E5\u8BE2");
+        JButton searchButton = new JButton("검색");
         searchButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 searchCourse(ae);
@@ -92,7 +92,7 @@ public class ManageCourseFrm extends JInternalFrame {
         JScrollPane scrollPane = new JScrollPane();
 
         JPanel panel = new JPanel();
-        panel.setBorder(new TitledBorder(null, "\u7F16\u8F91\u8BFE\u7A0B\u4FE1\u606F", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        panel.setBorder(new TitledBorder(null, "과정 정보 편집", TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GroupLayout groupLayout = new GroupLayout(getContentPane());
         groupLayout.setHorizontalGroup(
                 groupLayout.createParallelGroup(Alignment.LEADING)
@@ -131,33 +131,33 @@ public class ManageCourseFrm extends JInternalFrame {
                                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
-        JLabel label_2 = new JLabel("\u8BFE\u7A0B\u540D\u79F0\uFF1A");
+        JLabel label_2 = new JLabel("과정 이름:");
         label_2.setIcon(new ImageIcon(ManageCourseFrm.class.getResource("/images/\u8BFE\u7A0B.png")));
         label_2.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editCourseTextField = new JTextField();
         editCourseTextField.setColumns(10);
 
-        JLabel label_3 = new JLabel("\u6388\u8BFE\u8001\u5E08\uFF1A");
+        JLabel label_3 = new JLabel("수업 선생님:");
         label_3.setIcon(new ImageIcon(ManageCourseFrm.class.getResource("/images/\u8001\u5E08.png")));
         label_3.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editCourseTeachComboBox = new JComboBox();
 
-        JLabel label_4 = new JLabel("\u5B66\u751F\u4EBA\u6570\uFF1A");
+        JLabel label_4 = new JLabel("학생 수:");
         label_4.setIcon(new ImageIcon(ManageCourseFrm.class.getResource("/images/\u4EBA\u6570.png")));
         label_4.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editCourseStudentNumTextField = new JTextField();
         editCourseStudentNumTextField.setColumns(10);
 
-        JLabel label_5 = new JLabel("\u8BFE\u7A0B\u4ECB\u7ECD\uFF1A");
+        JLabel label_5 = new JLabel("코스 소개:");
         label_5.setIcon(new ImageIcon(ManageCourseFrm.class.getResource("/images/\u4ECB\u7ECD.png")));
         label_5.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editCourseInfoTextArea = new JTextArea();
 
-        JButton submitEditButton = new JButton("\u786E\u8BA4\u4FEE\u6539");
+        JButton submitEditButton = new JButton("확인 수정");
         submitEditButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 editCourseSubmit(ae);
@@ -166,7 +166,7 @@ public class ManageCourseFrm extends JInternalFrame {
         submitEditButton.setIcon(new ImageIcon(ManageCourseFrm.class.getResource("/images/\u786E\u8BA4.png")));
         submitEditButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
-        JButton deleteCourseButton = new JButton("\u5220\u9664\u8BFE\u7A0B");
+        JButton deleteCourseButton = new JButton("과정 삭제");
         deleteCourseButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 deleteCourse(ae);
@@ -240,7 +240,7 @@ public class ManageCourseFrm extends JInternalFrame {
                 new Object[][] {
                 },
                 new String[] {
-                        "\u8BFE\u7A0B\u7F16\u53F7", "\u8BFE\u7A0B\u540D\u79F0", "\u6388\u8BFE\u8001\u5E08", "\u8BFE\u7A0B\u6700\u5927\u4EBA\u6570", "\u5DF2\u9009\u4EBA\u6570", "\u8BFE\u7A0B\u4ECB\u7ECD"
+                        "과정번호", "과정명", "수업선생님", "과정최대인원", "선정된 인원", "과정안내"
                 }
         ) {
             boolean[] columnEditables = new boolean[] {

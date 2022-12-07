@@ -68,25 +68,25 @@ public class ManageStudentFrm extends JInternalFrame {
     public ManageStudentFrm() {
         setClosable(true);
         setIconifiable(true);
-        setTitle("\u5B66\u751F\u4FE1\u606F\u7BA1\u7406");
+        setTitle("학생 정보 관리");
         setBounds(100, 100, 842, 561);
 
         JScrollPane scrollPane = new JScrollPane();
 
-        JLabel label = new JLabel("\u5B66\u751F\u59D3\u540D\uFF1A");
+        JLabel label = new JLabel("학생 이름:");
         label.setIcon(new ImageIcon(ManageStudentFrm.class.getResource("/images/\u5B66\u751F\u7BA1\u7406.png")));
         label.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         serachStudentNameTextField = new JTextField();
         serachStudentNameTextField.setColumns(10);
 
-        JLabel label_1 = new JLabel("\u6240\u5C5E\u73ED\u7EA7\uFF1A");
+        JLabel label_1 = new JLabel("소속 학급:");
         label_1.setIcon(new ImageIcon(ManageStudentFrm.class.getResource("/images/\u73ED\u7EA7\u540D\u79F0.png")));
         label_1.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         searchStudentComboBox = new JComboBox();
 
-        JButton searchButton = new JButton("\u67E5\u8BE2");
+        JButton searchButton = new JButton("검색:");
         searchButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 searchStudent(ae);
@@ -95,41 +95,41 @@ public class ManageStudentFrm extends JInternalFrame {
         searchButton.setIcon(new ImageIcon(ManageStudentFrm.class.getResource("/images/\u641C\u7D22.png")));
         searchButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
-        JLabel label_2 = new JLabel("\u5B66\u751F\u59D3\u540D\uFF1A");
+        JLabel label_2 = new JLabel("학생 이름:");
         label_2.setIcon(new ImageIcon(ManageStudentFrm.class.getResource("/images/\u5B66\u751F\u7BA1\u7406.png")));
         label_2.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editStudentNameTextField = new JTextField();
         editStudentNameTextField.setColumns(10);
 
-        JLabel label_3 = new JLabel("\u6240\u5C5E\u73ED\u7EA7\uFF1A");
+        JLabel label_3 = new JLabel("소속 학급:");
         label_3.setIcon(new ImageIcon(ManageStudentFrm.class.getResource("/images/\u73ED\u7EA7\u540D\u79F0.png")));
         label_3.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editStudentClassComboBox = new JComboBox();
 
-        JLabel label_4 = new JLabel("\u5B66\u751F\u6027\u522B\uFF1A");
+        JLabel label_4 = new JLabel("학생 성별:");
         label_4.setIcon(new ImageIcon(ManageStudentFrm.class.getResource("/images/\u6027\u522B.png")));
         label_4.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editSexButtonGroup = new ButtonGroup();
-        editStudentSexManRadioButton = new JRadioButton("\u7537");
+        editStudentSexManRadioButton = new JRadioButton("남자");
         editStudentSexManRadioButton.setSelected(true);
 
-        editStudentSexFemalRadioButton = new JRadioButton("\u5973");
+        editStudentSexFemalRadioButton = new JRadioButton("여자");
 
-        editStudentSexUnkonwRadioButton = new JRadioButton("\u4FDD\u5BC6");
+        editStudentSexUnkonwRadioButton = new JRadioButton("비밀을 지키");
         editSexButtonGroup.add(editStudentSexManRadioButton);
         editSexButtonGroup.add(editStudentSexFemalRadioButton);
         editSexButtonGroup.add(editStudentSexUnkonwRadioButton);
 
-        JLabel label_5 = new JLabel("\u767B\u5F55\u5BC6\u7801\uFF1A");
+        JLabel label_5 = new JLabel("로그인 비밀번호:");
         label_5.setIcon(new ImageIcon(ManageStudentFrm.class.getResource("/images/password.png")));
         label_5.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         editStudentPasswordPasswordField = new JPasswordField();
 
-        JButton submitEditButton = new JButton("\u786E\u8BA4\u4FEE\u6539");
+        JButton submitEditButton = new JButton("확인 수정");
         submitEditButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 submitEditAct(ae);
@@ -138,7 +138,7 @@ public class ManageStudentFrm extends JInternalFrame {
         submitEditButton.setIcon(new ImageIcon(ManageStudentFrm.class.getResource("/images/\u786E\u8BA4.png")));
         submitEditButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
-        deleteStudentButton = new JButton("\u5220\u9664\u5B66\u751F");
+        deleteStudentButton = new JButton("학생 삭제");
         deleteStudentButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 deleteStudent(ae);
@@ -237,7 +237,7 @@ public class ManageStudentFrm extends JInternalFrame {
                 new Object[][] {
                 },
                 new String[] {
-                        "\u5B66\u751F\u7F16\u53F7", "\u5B66\u751F\u59D3\u540D", "\u6240\u5C5E\u73ED\u7EA7", "\u5B66\u751F\u6027\u522B", "\u767B\u5F55\u5BC6\u7801"
+                        "학생번호", "학생이름", "소속반", "학생성별", "로그인 비밀번호"
                 }
         ) {
             boolean[] columnEditables = new boolean[] {

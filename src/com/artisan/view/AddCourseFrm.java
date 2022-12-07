@@ -54,36 +54,36 @@ public class AddCourseFrm extends JInternalFrame {
     public AddCourseFrm() {
         setClosable(true);
         setIconifiable(true);
-        setTitle("\u6DFB\u52A0\u8BFE\u7A0B");
+        setTitle("과정 추가");
         setBounds(100, 100, 453, 471);
 
-        JLabel label = new JLabel("\u8BFE\u7A0B\u540D\u79F0\uFF1A");
+        JLabel label = new JLabel("과정 이름:");
         label.setIcon(new ImageIcon(AddCourseFrm.class.getResource("")));
         label.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         courseNameTextField = new JTextField();
         courseNameTextField.setColumns(10);
 
-        JLabel label_1 = new JLabel("\u6388\u8BFE\u8001\u5E08\uFF1A");
+        JLabel label_1 = new JLabel("수업 선생님:");
         label_1.setIcon(new ImageIcon(AddCourseFrm.class.getResource("")));
         label_1.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         teacherListComboBox = new JComboBox();
 
-        JLabel label_2 = new JLabel("\u5B66\u751F\u4EBA\u6570\uFF1A");
+        JLabel label_2 = new JLabel("학생 수:");
         label_2.setIcon(new ImageIcon(AddCourseFrm.class.getResource("")));
         label_2.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         studentNumTextField = new JTextField();
         studentNumTextField.setColumns(10);
 
-        JLabel label_3 = new JLabel("\u8BFE\u7A0B\u4ECB\u7ECD\uFF1A");
+        JLabel label_3 = new JLabel("코스 소개:");
         label_3.setIcon(new ImageIcon(AddCourseFrm.class.getResource("")));
         label_3.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         courseInfoTextArea = new JTextArea();
 
-        JButton addCourseButton = new JButton("\u786E\u8BA4\u6DFB\u52A0");
+        JButton addCourseButton = new JButton("추가 확인");
         addCourseButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 addCourseAct(ae);
@@ -92,7 +92,7 @@ public class AddCourseFrm extends JInternalFrame {
         addCourseButton.setIcon(new ImageIcon(AddCourseFrm.class.getResource("")));
         addCourseButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
-        JButton resetButton = new JButton("\u91CD\u7F6E\u4FE1\u606F");
+        JButton resetButton = new JButton("정보 재설정");
         resetButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 resetValue(ae);

@@ -68,16 +68,16 @@ public class StatsScoreFrm extends JInternalFrame {
     public StatsScoreFrm() {
         setClosable(true);
         setIconifiable(true);
-        setTitle("\u6210\u7EE9\u7EDF\u8BA1\u754C\u9762");
+        setTitle("성적 통계 인터페이스");
         setBounds(100, 100, 765, 730);
 
-        JLabel label = new JLabel("\u8BFE\u7A0B\u540D\u79F0\uFF1A");
+        JLabel label = new JLabel("과정 이름:");
         label.setIcon(new ImageIcon(StatsScoreFrm.class.getResource("/images/\u8BFE\u7A0B.png")));
         label.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         courseComboBox = new JComboBox();
 
-        JButton searchButton = new JButton("\u67E5\u8BE2");
+        JButton searchButton = new JButton("검색");
         searchButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 searchStatsAct(ae);
@@ -87,10 +87,10 @@ public class StatsScoreFrm extends JInternalFrame {
         searchButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
         viewPanel = new JPanel();
-        viewPanel.setBorder(new TitledBorder(null, "\u6210\u7EE9\u7EDF\u8BA1\u4FE1\u606F", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        viewPanel.setBorder(new TitledBorder(null, "성적통계정보", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 
         JPanel panel_1 = new JPanel();
-        panel_1.setBorder(new TitledBorder(null, "\u5207\u6362\u663E\u793A\u65B9\u5F0F", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+        panel_1.setBorder(new TitledBorder(null, "표시 방식 바꾸기", TitledBorder.LEADING, TitledBorder.TOP, null, null));
         GroupLayout groupLayout = new GroupLayout(getContentPane());
         groupLayout.setHorizontalGroup(
                 groupLayout.createParallelGroup(Alignment.LEADING)
@@ -125,7 +125,7 @@ public class StatsScoreFrm extends JInternalFrame {
                                 .addGap(33))
         );
 
-        JButton defaultViewButton = new JButton("\u9ED8\u8BA4\u663E\u793A");
+        JButton defaultViewButton = new JButton("기본 보기");
         defaultViewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 defaultViewAct(ae);
@@ -134,7 +134,7 @@ public class StatsScoreFrm extends JInternalFrame {
         defaultViewButton.setIcon(new ImageIcon(StatsScoreFrm.class.getResource("/images/\u9ED8\u8BA4.png")));
         defaultViewButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
-        JButton barViewButton = new JButton("\u67F1\u72B6\u56FE\u663E\u793A");
+        JButton barViewButton = new JButton("막대그래프 표시");
         barViewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 barViewAct(ae);
@@ -143,7 +143,7 @@ public class StatsScoreFrm extends JInternalFrame {
         barViewButton.setIcon(new ImageIcon(StatsScoreFrm.class.getResource("/images/\u67F1\u72B6\u56FE.png")));
         barViewButton.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
-        JButton pieViewButton = new JButton("\u997C\u72B6\u56FE\u663E\u793A");
+        JButton pieViewButton = new JButton("원형도 표시");
         pieViewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 peiViewAct(ae);
@@ -191,7 +191,7 @@ public class StatsScoreFrm extends JInternalFrame {
                                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        JLabel label_1 = new JLabel("\u6700\u9AD8\u5206\uFF1A");
+        JLabel label_1 = new JLabel("최고 점수:");
         label_1.setIcon(new ImageIcon(StatsScoreFrm.class.getResource("/images/\u6700\u9AD8\u5206.png")));
         label_1.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
@@ -200,7 +200,7 @@ public class StatsScoreFrm extends JInternalFrame {
         maxScoreTextField.setEditable(false);
         maxScoreTextField.setColumns(10);
 
-        JLabel lblNewLabel = new JLabel("\u6700\u4F4E\u5206\uFF1A");
+        JLabel lblNewLabel = new JLabel("최저점:");
         lblNewLabel.setIcon(new ImageIcon(StatsScoreFrm.class.getResource("/images/\u6700\u4F4E\u5206.png")));
         lblNewLabel.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
@@ -209,7 +209,7 @@ public class StatsScoreFrm extends JInternalFrame {
         minScoreTextField.setEditable(false);
         minScoreTextField.setColumns(10);
 
-        JLabel label_2 = new JLabel("\u5E73\u5747\u5206\uFF1A");
+        JLabel label_2 = new JLabel("평균 점수:");
         label_2.setIcon(new ImageIcon(StatsScoreFrm.class.getResource("/images/\u5E73\u5747.png")));
         label_2.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
@@ -218,7 +218,7 @@ public class StatsScoreFrm extends JInternalFrame {
         middScoreTextField.setEditable(false);
         middScoreTextField.setColumns(10);
 
-        JLabel label_3 = new JLabel("\u603B\u4EBA\u6570\uFF1A");
+        JLabel label_3 = new JLabel("총 인원수:");
         label_3.setIcon(new ImageIcon(StatsScoreFrm.class.getResource("/images/\u4EBA\u6570\u7EDF\u8BA1.png")));
         label_3.setFont(new Font("AppleMyungjo", Font.PLAIN, 14));
 
